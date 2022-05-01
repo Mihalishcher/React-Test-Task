@@ -8,6 +8,7 @@
     list-style-type: none;
     vertical-align: middle;
     box-shadow: 20px 15px 20px rgba(61, 90, 128, 0.4);
+    border-radius: 7px;
 }
 
 .footer a {

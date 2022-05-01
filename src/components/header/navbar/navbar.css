@@ -14,8 +14,9 @@
     display: inline-block;
     margin: 15px;
     padding: 7px;
-    font-size: 22px;
+    font-size: 18px;
     font-style: oblique;
+    text-decoration: none;
 }
 
 .navbar a:hover {
