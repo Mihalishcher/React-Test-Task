@@ -1,0 +1,50 @@
+.head {
+    display: flex;
+    background-color: rgba(61, 90, 128, 0.7);
+    padding: 15px 0;
+    border-radius: 10px 10px 0 0;
+}
+
+h1 {
+    font-size: 50px;
+    background: -webkit-linear-gradient(rgb(4, 64, 244), rgba(246, 246, 7));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px rgb(255, 255, 7);
+    font-style: oblique;
+}
+
+.app-logo {
+    margin-left: 20px;
+}
+
+.title-site {
+    margin-left: 200px;
+    text-align: center;
+}
+
+.contact-info {
+    margin: 0;
+    padding: 1em 3em 0 0;
+    font-size: 16px;
+
+}
+
+.contact-info a {
+    color: #ffee05;
+    padding: 2px;
+    text-decoration: none;
+}
+
+.mail-logo {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.contact-info a:hover {
+    text-decoration: none;
+    border-radius: 2px;
+    background-color: #ffee05;
+    color: rgba(61, 90, 128)
+}

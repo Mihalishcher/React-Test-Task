@@ -1,0 +1,26 @@
+.navbar {
+    font-size: 24px;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(255, 238, 5, 0.7);
+    border-radius: 0 0 7px 7px;
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, .15);
+}
+
+.navbar a {
+    font-size: 18px;
+    font-family: sans-serif;
+    color: rgb(0, 100, 255);
+    display: inline-block;
+    margin: 15px;
+    padding: 7px;
+    font-size: 22px;
+    font-style: oblique;
+}
+
+.navbar a:hover {
+    text-decoration: none;
+    border-radius: 8px;
+    background-color: rgba(61, 90, 128);
+    color: #ffee05;
+}
