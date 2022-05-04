@@ -1,13 +1,17 @@
-.navbar {
+nav {
     font-size: 24px;
     width: 100%;
     text-align: center;
-    background-color: rgba(255, 238, 5, 0.7);
     border-radius: 0 0 7px 7px;
     box-shadow: 15px 15px 30px rgba(0, 0, 0, .15);
 }
 
-.navbar a {
+nav li {
+    display: inline-block;
+    list-style: none;
+}
+
+nav a {
     font-size: 18px;
     font-family: sans-serif;
     color: rgb(0, 100, 255);
@@ -19,7 +23,7 @@
     text-decoration: none;
 }
 
-.navbar a:hover {
+nav a:hover {
     text-decoration: none;
     border-radius: 8px;
     background-color: rgba(61, 90, 128);

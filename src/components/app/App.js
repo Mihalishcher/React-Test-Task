@@ -1,18 +1,19 @@
-import Header from '../header/header'
-import Banner from '../banner/banner';
-import MainInfo from '../home/main-info/main-info';
-import Footer from '../footer/footer';
+import { Routes, Route } from 'react-router-dom';
+
+import Home from '../home/home';
+import Instrument from '../instrument/instrument';
 
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Banner />
-      <MainInfo />
-      <Footer />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/instrument' element={<Instrument />} />
+      </Routes>
     </div >
+
   );
 }
 
