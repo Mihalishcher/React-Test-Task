@@ -1,6 +1,7 @@
-.banner {
-    width: 100%;
+.banner img {
+    max-width: 100%;
     border-radius: 7px;
+    display: flex;
     margin-bottom: 25px;
     box-shadow: 20px 15px 20px rgba(184, 184, 182, 0.4);
 }

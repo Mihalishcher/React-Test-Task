@@ -17,9 +17,9 @@ h1 {
 .app-logo {
     margin-left: 20px;
     margin-bottom: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(rgb(249, 230, 16), rgb(20, 98, 255));
     border-radius: 35px;
-    border: 2px solid #ffee05;
+    border: 1px solid #ffee05;
     padding: 2px;
 }
 
@@ -36,7 +36,7 @@ h1 {
 }
 
 .mail-logo {
-    margin-right: 10px;
+    margin: 10px 10px 0 0;
     vertical-align: middle;
 }
 
@@ -49,6 +49,17 @@ h1 {
 
 .contact-info p {
     color: rgb(255, 255, 255);
-    font-style: oblique;
     font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+    .mail-logo {
+        visibility: hidden;
+    }
+
+    .contact-info {
+        padding: 0;
+        margin: 0;
+        margin-left: -70px;
+    }
 }

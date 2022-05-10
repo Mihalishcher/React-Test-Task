@@ -2,7 +2,7 @@ import Header from "../header/header"
 import Banner from "../banner/banner"
 import Footer from "../footer/footer"
 
-const Instrument = () => {
+const Obrobka = () => {
     return (
         <div>
             <Header />
@@ -11,4 +11,4 @@ const Instrument = () => {
         </div>
     )
 }
-export default Instrument
+export default Obrobka

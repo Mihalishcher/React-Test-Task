@@ -1,0 +1,8 @@
+.main-info {
+    border-radius: 10px;
+    display: flex;
+    margin: 0px auto;
+    padding: 30px 30px;
+    background-color: rgba(184, 182, 182, 0.8);
+    box-shadow: 20px 15px 20px rgba(184, 184, 182, 0.4);
+}

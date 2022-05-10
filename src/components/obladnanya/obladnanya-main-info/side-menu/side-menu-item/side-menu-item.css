@@ -1,0 +1,34 @@
+.aside-div {
+    width: 320px;
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.aside-div img {
+    border: 2px solid rgba(255, 238, 5, 0.4);
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 20px;
+    transition: transform 0.4s;
+    width: 110px;
+    height: 110px;
+}
+
+.aside-div a {
+    padding-right: 4px;
+    text-decoration: none;
+    font-style: oblique;
+    font-weight: bold;
+    color: rgb(0, 100, 255);
+}
+
+.aside-div a:hover, .aside-div img:hover {
+    background-color: rgba(255, 238, 5, 0.4);
+    border-radius: 25px;
+    box-shadow: 20px 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+.aside-div a img:hover {
+    transform: scale(1.1);
+    border-radius: 50%;
+}

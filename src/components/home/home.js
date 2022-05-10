@@ -1,6 +1,6 @@
 import Header from "../header/header"
 import Banner from "../banner/banner"
-import MainInfo from "./main-info/main-info"
+import MainInfo from "./home-main-info/main-info"
 import Footer from "../footer/footer"
 
 const Home = () => {
