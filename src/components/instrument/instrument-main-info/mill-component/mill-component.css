@@ -1,0 +1,45 @@
+.mill-comp {
+    display: flex;
+    width: 95%;
+    height: 140px;
+    border: 2px solid black;
+    border-radius: 7px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.mill-photo {
+    width: 140px;
+    border: 1px solid black;
+    border-radius: 7px;
+}
+
+.mill-property {
+    padding-left: 30px;
+    padding-top: 20px;
+    width: 60%;
+}
+
+.mill-price {
+    margin-top: 40px;
+    width: 20%;
+}
+
+.mill-price p {
+    display: flex;
+    margin: 70px 0 0 100px;
+
+}
+
+.center {
+    display: flex;
+}
+
+.delete-logo {
+    margin-top: 20px;
+    margin-right: 20px;
+    display: inline-flex;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
