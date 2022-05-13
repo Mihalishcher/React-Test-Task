@@ -10,7 +10,7 @@
     height: 0px;
     opacity: 0;
     animation: showForm 1s forwards;
-
+    margin-bottom: 10px;
 
 }
 
@@ -48,6 +48,7 @@ input {
 
 #tooth {
     margin-right: 150px;
+    margin-left: 14px;
 }
 
 .visible {

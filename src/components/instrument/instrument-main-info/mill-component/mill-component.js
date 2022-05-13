@@ -2,7 +2,7 @@ import MillLogo from "../../../../img/mill.jpg"
 import DeleteLogo from "../../../../img/delete.png"
 import './mill-component.css'
 
-const MillComponent = ({ name = "No name", price = 0, property, onDelete }) => {
+const MillComponent = ({ name, price, property, onDelete }) => {
 
     return (
         <div className="mill-comp">
@@ -13,7 +13,7 @@ const MillComponent = ({ name = "No name", price = 0, property, onDelete }) => {
                 <p>{name}</p><br />
                 <p>Діаметер інструменту: {property.diameter}</p>
                 <p>Довжина інструменту: {property.height} мм</p>
-                <p>Кількість ріжучіх кромок:  {property.tooth} зуба</p>
+                <p>Кількість ріжучіх кромок:  {property.tooth} шт</p>
             </div>
             <div className="mill-price">
                 <p>Ціна: {price}$</p>

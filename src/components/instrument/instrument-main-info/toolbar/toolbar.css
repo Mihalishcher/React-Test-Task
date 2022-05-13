@@ -12,18 +12,22 @@
     height: 20px;
     margin-top: 5px;
     border-radius: 7px;
+    background-color: white;
 }
 
 .sort-list {
+    border: 2px solid black;
     margin-right: 5px;
     height: 20px;
     margin-top: 5px;
     border-radius: 7px;
+    background-color: white;
 }
 
 .sort-btn {
-    margin-right: -270px;
+    margin-right: -250px;
     height: 20px;
     margin-top: 5px;
     border-radius: 7px;
+    background-color: white;
 }
