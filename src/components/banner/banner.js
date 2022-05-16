@@ -1,10 +1,11 @@
-import logoBanner from '../../img/ban-ukr.jpg'
-import './banner.css'
+import Images from '../Images/Images'
+
+import './Banner.css'
 
 const Banner = () => {
     return (
         <div className="banner">
-            <img src={logoBanner} alt="banner" />
+            <img src={Images.logoBanner} alt="banner" />
         </div>
     )
 }

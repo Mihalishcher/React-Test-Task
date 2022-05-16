@@ -1,7 +1,7 @@
-import AppInfo from "./app-info/app-info"
-import Navbar from "./navbar/navbar"
+import AppInfo from "./AppInfo/AppInfo"
+import Navbar from "./Navbar/Navbar"
 
-import './header.css'
+import './Header.css'
 
 const Header = () => {
     return (

@@ -1,12 +1,12 @@
 import { Routes, Route } from 'react-router-dom';
 
-import Home from '../home/home';
-import Company from '../company/company';
-import Obladnanya from '../obladnanya/obladnanya';
-import Instrument from '../instrument/instrument';
-import Obrobka from '../obrobka/obrobka';
-import Inzhiniring from '../inzhiniring/inzhiniring';
-import Contacts from '../contacts/contacts';
+import Home from '../../pages/Home/Home'
+import Company from '../../pages/Company/Company';
+import Obladnanya from '../../pages/Obladnanya/Obladnanya';
+import Instrument from '../../pages/Instrument/Instrument';
+import Obrobka from '../../pages/Obrobka/Obrobka';
+import Inzhiniring from '../../pages/Inzhiniring/Inzhiniring';
+import Contacts from '../../pages/Contacts/Contacts';
 
 
 import './App.css';
