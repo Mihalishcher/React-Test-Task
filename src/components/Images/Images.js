@@ -7,6 +7,9 @@ import emailLogo from './e-mail-as-tec.png'
 import logoBanner from './ban-ukr.jpg'
 import millLogo from "./mill.jpg"
 import deleteLogo from "./delete.png"
+import videoBanner1 from './vid1.mp4'
+import videoBanner2 from './vid2.mp4'
+import videoBanner3 from './vid3.mp4'
 
 const Images = {
     golovnaLogo1: golovnaLogo1,
@@ -18,6 +21,9 @@ const Images = {
     logoBanner: logoBanner,
     millLogo: millLogo,
     deleteLogo: deleteLogo,
+    videoBanner1: videoBanner1,
+    videoBanner2: videoBanner2,
+    videoBanner3: videoBanner3
 }
 
 export default Images

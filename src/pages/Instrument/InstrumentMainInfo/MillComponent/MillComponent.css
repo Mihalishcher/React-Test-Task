@@ -43,3 +43,35 @@
     height: 30px;
     cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+    .mill-photo {
+        width: 90px;
+    }
+
+    .mill-property {
+        padding-left: 10px;
+        padding-top: 0px;
+    }
+
+    .mill-price {
+        margin-top: 30px;
+        width: 10%;
+    }
+
+    .mill-price p {
+        margin: 0;
+    }
+
+    .mill-comp {
+        height: 100px;
+    }
+
+    .delete-logo {
+        margin-top: 35px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+}

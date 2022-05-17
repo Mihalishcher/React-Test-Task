@@ -33,6 +33,7 @@ class AddFormInstrument extends Component {
     }
 
     render() {
+
         const { name, price, diameter, height, tooth } = this.state
         const visible = this.props.visible
 
@@ -41,58 +42,33 @@ class AddFormInstrument extends Component {
             className += " visible"
         }
 
+        const inputs = [
+            { name: 'Назва інструменту:', type: 'text', prop: 'name', stateValue: name },
+            { name: 'Діаметер інструменту:', type: 'number', prop: 'diameter', stateValue: diameter },
+            { name: 'Довжина інструменту:', type: 'number', prop: 'height', stateValue: height },
+            { name: 'Кількість ріжучих кромок:', type: 'number', prop: 'tooth', stateValue: tooth },
+            { name: 'Ціна ($):', type: 'number', prop: 'price', stateValue: price },
+        ]
+
+        const inputElements = inputs.map(({ name, type, prop, stateValue }) => {
+            return (
+                <div>
+                    <label htmlFor={prop}>{name}</label>
+                    <input
+                        type={type}
+                        id={prop}
+                        onChange={this.onValueChange}
+                        name={prop}
+                        value={stateValue}
+                    />
+                </div>
+            )
+        })
+
         return (
             <div className={className}>
                 <form onSubmit={this.onSubmit}>
-                    <div>
-                        <label htmlFor="name">Назва інструменту:</label>
-                        <input
-                            type="text"
-                            id="name"
-                            placeholder="Маркування"
-                            onChange={this.onValueChange}
-                            name='name'
-                            value={name}
-                        />
-                        <label htmlFor="diameter">Діаметер інструменту:</label>
-                        <input
-                            type="number"
-                            id="diameter"
-                            placeholder='0 мм'
-                            onChange={this.onValueChange}
-                            name='diameter'
-                            value={diameter}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="height">Довжина інструменту:</label>
-                        <input
-                            type="number"
-                            id="height"
-                            placeholder='0 мм'
-                            onChange={this.onValueChange}
-                            name='height'
-                            value={height}
-                        />
-                        <label htmlFor="price">Ціна ($):</label>
-                        <input
-                            type="number"
-                            id="price"
-                            placeholder='0 $'
-                            onChange={this.onValueChange}
-                            name='price'
-                            value={price}
-                        />
-                    </div>
-                    <label htmlFor="tooth">Кількість ріжучих кромок:</label>
-                    <input
-                        type="number"
-                        id="tooth"
-                        placeholder='0 шт'
-                        onChange={this.onValueChange}
-                        name='tooth'
-                        value={tooth}
-                    />
+                    {inputElements}
                     <button className='add-btn' type='submit'>Додати елемент</button>
                 </form>
             </div>

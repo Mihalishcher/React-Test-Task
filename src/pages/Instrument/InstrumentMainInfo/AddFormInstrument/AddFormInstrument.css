@@ -32,26 +32,40 @@ label {
 
 input {
     padding-left: 5px;
-    width: 20%;
-    margin: 10px;
     border-radius: 7px;
+}
+
+.add-btn {
+    margin-left: 15px;
 }
 
 #name {
     margin-left: 67px;
 }
 
+#diameter {
+    margin-left: 43px;
+}
+
 #height {
     margin-left: 43px;
-    margin-right: 117px;
 }
 
 #tooth {
-    margin-right: 150px;
     margin-left: 14px;
+}
+
+#price {
+    margin-left: 150px;
 }
 
 .visible {
     display: block;
 
+}
+
+@media screen and (max-width: 768px) {
+    .add-form-instrument {
+        min-width: 460px;
+    }
 }
