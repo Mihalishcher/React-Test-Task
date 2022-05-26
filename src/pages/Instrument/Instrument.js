@@ -1,9 +1,5 @@
-import Header from '../../components/Header/Header'
-import Banner from '../../components/Banner/Banner'
-import Footer from '../../components/Footer/Footer'
 import InstrumentMainInfo from './InstrumentMainInfo/InstrumentMainInfo'
-
-
+import Layout from '../../components/Layout/Layout'
 
 const Instrument = () => {
 
@@ -21,12 +17,7 @@ const Instrument = () => {
     ]
 
     return (
-        <div>
-            <Header />
-            <Banner />
-            <InstrumentMainInfo {...data} />
-            <Footer />
-        </div>
+        <Layout><InstrumentMainInfo {...data} /></Layout>
     )
 }
 export default Instrument

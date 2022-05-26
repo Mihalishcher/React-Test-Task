@@ -1,0 +1,30 @@
+.description {
+    margin-left: 0px;
+    width: 570px;
+    padding: 20px 0 0 40px;
+    color: rgb(0, 81, 255);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+h2 {
+    color: rgb(194, 18, 18);
+    margin-bottom: 20px;
+}
+
+.description li {
+    width: 80%;
+    margin: 0;
+}
+
+@media screen and (max-width: 1000px) {
+    .description {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        margin-left: -100px;
+        margin-bottom: 20px;
+    }
+
+}

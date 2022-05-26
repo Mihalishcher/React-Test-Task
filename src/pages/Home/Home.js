@@ -1,16 +1,9 @@
-import Header from '../../components/Header/Header'
-import Banner from '../../components/Banner/Banner'
 import HomeMainInfo from './HomeMainInfo/HomeMainInfo'
-import Footer from '../../components/Footer/Footer'
+import Layout from '../../components/Layout/Layout'
 
 const Home = () => {
     return (
-        <div>
-            <Header />
-            <Banner />
-            <HomeMainInfo />
-            <Footer />
-        </div>
+        <Layout><HomeMainInfo /></Layout>
     )
 }
 export default Home

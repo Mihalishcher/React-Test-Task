@@ -1,0 +1,11 @@
+.instrument-main {
+    background-color: rgba(243, 243, 240, 0.9);
+    border: 2px solid black;
+    border-radius: 7px;
+    min-height: 160px;
+    box-shadow: 10px 15px 20px rgba(2255, 255, 255, 0.4);
+}
+
+.millComp {
+    cursor: grab;
+}

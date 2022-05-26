@@ -1,7 +1,7 @@
-import SideMenu from "./SideMenu/SideMenu"
-import DescriptionSide from "./DescriptionSide/DescriptionSide"
+import SideMenu from "./SideMenu"
+import DescriptionSide from "./DescriptionSide"
 
-import './HomeMainInfo.css'
+import './css/HomeMainInfo.css'
 
 const HomeMainInfo = () => {
     return (
