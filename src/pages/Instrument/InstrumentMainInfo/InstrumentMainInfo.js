@@ -157,7 +157,6 @@ class InstrumentMainInfo extends Component {
                     onDragOver={(e) => this.dragOver(e)}
                     onDrop={(e) => this.drop(e, item)}>
                     <MillComponent
-                        // back={false}
                         name={name}
                         price={price}
                         property={property}

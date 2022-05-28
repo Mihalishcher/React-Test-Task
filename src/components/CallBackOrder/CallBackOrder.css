@@ -1,0 +1,32 @@
+.call-back-order {
+    width: 200px;
+    height: 100px;
+    background-color: rgb(206, 201, 201);
+    border-radius: 7px;
+    border: 2px solid;
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    z-index: 1000;
+    padding: 20px;
+    text-align: center;
+    font-size: medium;
+    visibility: hidden;
+}
+
+.btn-sub {
+    display: flex;
+    margin: 10px auto;
+}
+
+input {
+    margin-top: 10px;
+}
+
+.visible {
+    visibility: inherit;
+}
+
+span {
+    color: rgb(230, 66, 66)
+}
