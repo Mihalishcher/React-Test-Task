@@ -1,20 +1,9 @@
-.mill-comp {
-    display: flex;
-    width: 95%;
-    height: 150px;
-    border: 2px solid black;
-    border-radius: 7px;
-    padding: 5px 0 0 5px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-
 .red {
     background-color: red;
 }
 
 .mill-photo {
-    width: 140px;
+    width: 148px;
     border: 1px solid black;
     border-radius: 7px;
 }
@@ -49,6 +38,10 @@
     cursor: pointer;
 }
 
+.hide {
+    display: none;
+}
+
 @media screen and (max-width: 1000px) {
     .mill-photo {
         width: 90px;
@@ -78,5 +71,7 @@
         height: 30px;
         cursor: pointer;
     }
+
+
 
 }

@@ -14,12 +14,17 @@
     visibility: hidden;
 }
 
+.btn-group {
+    display: flex;
+}
+
 .btn-sub {
     display: flex;
+
     margin: 10px auto;
 }
 
-input {
+.input-phone {
     margin-top: 10px;
 }
 

@@ -29,6 +29,10 @@ class CallBackOrder extends Component {
         e.target.disabled = true
     }
 
+    closeWindow = () => {
+        this.setState({ visibility: false })
+    }
+
     componentDidMount() {
         this.showCallOrderForm()
     }
@@ -49,12 +53,17 @@ class CallBackOrder extends Component {
             <div className={classCallOrder}>
                 <p>Ми Вам передзвонимо через <span>{counter}</span>  секунд</p>
                 <input
-                    type="number"
+                    className='input-phone'
+                    type="tel"
                     placeholder='+380'
                     onChange={this.enteredPhone}
                     name='phoneNumber'
                     value={phoneNumber} />
-                <button onClick={this.callOrdered} className='btn-sub'>Замовити</button>
+                <div className='btn-group'>
+                    <button onClick={this.callOrdered} className='btn-sub'>Замовити</button>
+                    <button onClick={this.closeWindow} className='btn-sub'>Закрити</button>
+                </div>
+
             </div>
         )
     }
