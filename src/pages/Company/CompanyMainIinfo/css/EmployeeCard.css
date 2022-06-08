@@ -1,0 +1,24 @@
+.employee-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 7px;
+    margin: 0;
+}
+
+.employee-name {
+    color: rgb(30, 29, 29);
+    padding: 20px 0 20px 20px;
+    text-decoration: underline;
+}
+
+.employee-description {
+    padding: 0 20px;
+}
+
+.employee-info {
+    margin: 0;
+}
+
+.employee-name a {
+    color: black
+}

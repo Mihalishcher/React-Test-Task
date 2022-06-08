@@ -12,7 +12,6 @@ const Layout = ({ children }) => {
             <Footer />
             <CallBackOrder />
         </div>
-
     )
 }
 
