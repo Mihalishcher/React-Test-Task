@@ -12,7 +12,6 @@ import Contacts from '../../pages/Contacts/Contacts';
 import './App.css';
 
 function App() {
-  console.log('check')
   return (
     <div className="App">
       <Routes>
