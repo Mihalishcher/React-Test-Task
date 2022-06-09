@@ -15,7 +15,7 @@ const SideMenuItem = ({ logo, name, url }) => {
 }
 
 SideMenuItem.propTypes = {
-    logo: PropTypes.object.isRequired,
+    logo: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired
 }

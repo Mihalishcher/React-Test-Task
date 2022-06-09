@@ -7,7 +7,8 @@ class Toolbar extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            value: 'name'
+            value: 'name',
+            visible: false
         }
     }
 

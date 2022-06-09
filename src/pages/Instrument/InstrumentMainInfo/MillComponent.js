@@ -42,7 +42,7 @@ const MillComponent = ({ name, price, property, onDelete }) => {
 
 MillComponent.propTypes = {
     name: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
+    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     property: PropTypes.object.isRequired,
     onDelete: PropTypes.func.isRequired
 }
