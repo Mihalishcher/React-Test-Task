@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 import './css/EmployeeCard.css'
 
 const EmployeeCard = ({ name, image, description, url }) => {
@@ -12,9 +14,14 @@ const EmployeeCard = ({ name, image, description, url }) => {
             </div>
 
         </>
-
-
     )
+}
+
+EmployeeCard.propTypes = {
+    name: PropTypes.string.isRequired,
+    image: PropTypes.object.isRequired,
+    description: PropTypes.string.isRequired,
+    url: PropTypes.object.isRequired
 }
 
 export default EmployeeCard

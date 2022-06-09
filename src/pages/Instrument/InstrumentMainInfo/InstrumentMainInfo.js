@@ -221,7 +221,8 @@ class InstrumentMainInfo extends Component {
                 />
                 <AddFormInstrument
                     visible={visible}
-                    onAdd={this.addInstrument} />
+                    onAdd={this.addInstrument}
+                />
                 {elements}
             </div>
         )

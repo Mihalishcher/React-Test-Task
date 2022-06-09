@@ -21,11 +21,11 @@
 h1 {
     min-width: 460px;
     font-size: 80px;
-    color: rgb(31, 29, 29);
+    color: rgb(216, 211, 211);
     letter-spacing: 50px;
     margin-left: 40px;
     -webkit-text-stroke-width: 0.1px;
-    -webkit-text-stroke-color: #9e9c9c;
+    -webkit-text-stroke-color: #302e2e;
 
 }
 

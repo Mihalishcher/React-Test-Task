@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import './css/Toolbar.css'
 
@@ -40,6 +41,11 @@ class Toolbar extends Component {
             </div>
         )
     }
+}
+
+Toolbar.propTypes = {
+    sortData: PropTypes.func.isRequired,
+    onClickAddElem: PropTypes.func.isRequired
 }
 
 export default Toolbar

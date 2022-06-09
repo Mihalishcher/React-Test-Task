@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
 import './css/SideMenuItem.css'
@@ -11,6 +12,12 @@ const SideMenuItem = ({ logo, name, url }) => {
             </Link>
         </li >
     )
+}
+
+SideMenuItem.propTypes = {
+    logo: PropTypes.object.isRequired,
+    name: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired
 }
 
 export default SideMenuItem

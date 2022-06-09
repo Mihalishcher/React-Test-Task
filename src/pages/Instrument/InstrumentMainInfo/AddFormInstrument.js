@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import './css/AddFormInstrument.css'
 
@@ -31,7 +32,6 @@ class AddFormInstrument extends Component {
     }
 
     render() {
-
         const { name, price, diameter, height, tooth } = this.state
         const visible = this.props.visible
 
@@ -72,6 +72,11 @@ class AddFormInstrument extends Component {
             </div>
         )
     }
+}
+
+AddFormInstrument.propTypes = {
+    visible: PropTypes.bool.isRequired,
+    onAdd: PropTypes.func.isRequired
 }
 
 export default AddFormInstrument

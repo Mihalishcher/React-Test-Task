@@ -7,9 +7,8 @@
 .app-logo {
     margin-left: 20px;
     margin-bottom: 20px;
-    background: linear-gradient(rgb(249, 230, 16), rgb(20, 98, 255));
+    background: linear-gradient(rgb(255, 255, 255), rgb(64, 61, 61));
     border-radius: 35px;
-    border: 1px solid #ffee05;
     padding: 2px;
 }
 
@@ -25,11 +24,6 @@
     text-decoration: none;
 }
 
-.mail-logo {
-    margin: 10px 10px 0 0;
-    vertical-align: middle;
-}
-
 .contact-info a:hover {
     text-decoration: none;
     border-radius: 2px;
@@ -43,9 +37,6 @@
 }
 
 @media screen and (max-width: 768px) {
-    .mail-logo {
-        visibility: hidden;
-    }
 
     .contact-info {
         padding: 0;

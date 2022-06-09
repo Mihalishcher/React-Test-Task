@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import Images from '../../../components/Resources/Images'
 
 import './css/MillComponent.css'
@@ -37,6 +38,13 @@ const MillComponent = ({ name, price, property, onDelete }) => {
 
 
     )
+}
+
+MillComponent.propTypes = {
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    property: PropTypes.object.isRequired,
+    onDelete: PropTypes.func.isRequired
 }
 
 export default MillComponent
