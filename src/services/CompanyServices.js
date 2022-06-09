@@ -1,20 +1,31 @@
 import axios from "axios";
 
-const API_KEY = '825446dc6e5485732825bdf5f618ca71'
-
 class CompanyServices {
+    _API_KEY = '825446dc6e5485732825bdf5f618ca71'
+
     getResource = (url) => {
         return axios.get(url, {
             params: {
-                apikey: API_KEY,
+                apikey: this._API_KEY,
                 limit: 100,
                 orderBy: '-name'
             }
         })
     }
 
-    getAllEmployees = () => {
-        return this.getResource('https://gateway.marvel.com:443/v1/public/characters')
+    getAllEmployees = async () => {
+        const res = await this.getResource('https://gateway.marvel.com:443/v1/public/characters')
+        return this._transformEmployees(res.data.data.results)
+    }
+
+    cheakCharacter = (char) => {
+        const noImage = 'image_not_available'
+        return (char.description && !char.thumbnail.path.includes(noImage))
+    }
+
+    _transformEmployees = (chars) => {
+        const numberOfEmployees = 12
+        return chars.filter(this.cheakCharacter).slice(0, numberOfEmployees)
     }
 }
 

@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import CompanyServices from '../../../services/CompanyServices'
 import EmployeeCard from './EmployeeCard'
+import Spinner from '../../../components/Spinner/Spinner'
 
 import './css/CompanyMainInfo.css'
 
@@ -8,38 +9,23 @@ const companyService = new CompanyServices()
 
 class CompanyMainInfo extends Component {
     state = {
-        data: []
-    }
-
-    cheakCharacter = (char) => {
-        const noImage = 'image_not_available'
-        return (char.description.length > 1 && !char.thumbnail.path.includes(noImage))
+        data: [],
+        loading: true
     }
 
     componentDidMount() {
-        companyService.getAllEmployees().then(res => {
-            const allChars = res.data.data.results
-            const numberOfEmployees = 12
-            let employeesList = []
-            allChars.forEach(char => {
-                if (this.cheakCharacter(char) && employeesList.length < numberOfEmployees) {
-                    employeesList.push(char)
-                }
-            });
-            this.setState({
-                data: employeesList
-            })
+        companyService.getAllEmployees().then(data => {
+            this.setState({ data, loading: false })
         })
     }
 
     render() {
-        const { data } = this.state
+        const { data, loading } = this.state
 
-        const elements = data.map(item => {
-            const { id, name, thumbnail, description, urls } = item
+        const elements = data.map(employee => {
+            const { id, name, thumbnail, description, urls } = employee
             return (
-                <li
-                    className='employee-card'
+                <li className='employee-card'
                     key={id}>
                     <EmployeeCard
                         name={name}
@@ -53,7 +39,7 @@ class CompanyMainInfo extends Component {
         return (
             <div className='company-main-info'>
                 <h2>Наші співробітники</h2>
-                {elements}
+                {loading ? <Spinner /> : elements}
             </div>
         )
     }
