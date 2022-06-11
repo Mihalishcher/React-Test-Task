@@ -50,12 +50,8 @@ class InstrumentMainInfo extends Component {
 
   sortData = (field) => {
     this.setState(({ data }) => {
-      let oldState = [...data];
-      if (field === 'price') {
-        oldState = this.selfSortByPrice(oldState);
-      } else {
-        oldState.sort(this.sortMethod(field));
-      }
+      const oldState = [...data];
+      oldState.sort(this.sortMethod(field));
       if (oldState[0].id === data[0].id) {
         oldState.reverse();
       }
@@ -187,26 +183,6 @@ class InstrumentMainInfo extends Component {
       return (a, b) => (a.property[field] < b.property[field] ? -1 : 1);
     }
     return (a, b) => (a[field] < b[field] ? -1 : 1);
-  }
-
-  selfSortByPrice(arr) {
-    const sortedArr = [];
-    const arrLength = arr.length;
-    for (let i = 0; i < arrLength; i += 1) {
-      let maxValue = 0;
-      arr.forEach((item) => {
-        if (maxValue < item.price) {
-          maxValue = item.price;
-        }
-      });
-      arr.forEach((item) => {
-        if (maxValue === item.price) {
-          sortedArr.push(item);
-        }
-      });
-      arr = arr.filter((obj) => !sortedArr.includes(obj)); // eslint-disable-line
-    }
-    return sortedArr.reverse();
   }
 
   render() {
