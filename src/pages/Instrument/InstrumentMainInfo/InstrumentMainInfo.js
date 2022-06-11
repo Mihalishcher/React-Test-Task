@@ -1,5 +1,5 @@
-import MillComponent from './MillComponent';
 import { Component } from 'react';
+import MillComponent from './MillComponent';
 import Toolbar from './Toolbar';
 import AddFormInstrument from './AddFormInstrument';
 
