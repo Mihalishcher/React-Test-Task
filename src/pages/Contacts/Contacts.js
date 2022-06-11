@@ -1,8 +1,8 @@
-import Layout from '../../components/Layout/Layout'
+import Layout from '../../components/Layout/Layout';
 
-const Contacts = () => {
-    return (
-        <Layout></Layout>
-    )
+function Contacts() {
+  return (
+    <Layout />
+  );
 }
-export default Contacts
+export default Contacts;

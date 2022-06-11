@@ -1,8 +1,8 @@
-import Layout from '../../components/Layout/Layout'
+import Layout from '../../components/Layout/Layout';
 
-const Obladnanya = () => {
-    return (
-        <Layout></Layout>
-    )
+function Obladnanya() {
+  return (
+    <Layout />
+  );
 }
-export default Obladnanya
+export default Obladnanya;

@@ -1,8 +1,8 @@
-import Layout from '../../components/Layout/Layout'
+import Layout from '../../components/Layout/Layout';
 
-const Obrobka = () => {
-    return (
-        <Layout></Layout>
-    )
+function Obrobka() {
+  return (
+    <Layout />
+  );
 }
-export default Obrobka
+export default Obrobka;

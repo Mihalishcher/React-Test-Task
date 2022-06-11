@@ -1,9 +1,9 @@
-import Layout from '../../components/Layout/Layout'
-import CompanyMainInfo from './CompanyMainIinfo/CompanyMainInfo'
+import Layout from '../../components/Layout/Layout';
+import CompanyMainInfo from './CompanyMainIinfo/CompanyMainInfo';
 
-const Company = () => {
-    return (
-        <Layout><CompanyMainInfo /></Layout>
-    )
+function Company() {
+  return (
+    <Layout><CompanyMainInfo /></Layout>
+  );
 }
-export default Company
+export default Company;

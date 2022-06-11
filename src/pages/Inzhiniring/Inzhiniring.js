@@ -1,8 +1,8 @@
-import Layout from '../../components/Layout/Layout'
+import Layout from '../../components/Layout/Layout';
 
-const Inzhiniring = () => {
-    return (
-        <Layout></Layout>
-    )
+function Inzhiniring() {
+  return (
+    <Layout />
+  );
 }
-export default Inzhiniring
+export default Inzhiniring;

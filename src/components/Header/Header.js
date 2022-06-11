@@ -1,15 +1,15 @@
-import AppInfo from "./AppInfo"
-import Navbar from "./Navbar"
+import AppInfo from './AppInfo';
+import Navbar from './Navbar';
 
-import './css/Header.css'
+import './css/Header.css';
 
-const Header = () => {
-    return (
-        <div className="header">
-            <AppInfo />
-            <Navbar />
-        </div>
-    )
+function Header() {
+  return (
+    <div className="header">
+      <AppInfo />
+      <Navbar />
+    </div>
+  );
 }
 
-export default Header
+export default Header;
