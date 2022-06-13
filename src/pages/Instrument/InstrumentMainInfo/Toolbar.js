@@ -2,11 +2,9 @@ import PropTypes from 'prop-types';
 
 import './css/Toolbar.css';
 
-function Toolbar(props) {
-  const {
-    onClickAddElem, sortData, onChangeSelect, toolbarSortSelect
-  } = props;
-
+function Toolbar({
+  onClickAddElem, sortData, onChangeSelect, toolbarSortSelect
+}) {
   return (
     <div className="toolbar">
       <button

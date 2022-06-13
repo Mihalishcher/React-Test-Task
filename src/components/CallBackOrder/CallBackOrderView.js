@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 
-function CallBackOrderView({
-  visibility, onChange, closeWindow, callOrdered, counter, phoneNumber, disabledBtn 
-}) {
+function CallBackOrderView(props) {
+  const {
+    visibility, onChange, closeWindow, callOrdered, counter, phoneNumber, disabledBtn
+  } = props;
   return (
     <div className={cn('call-back-order', { visible: visibility })}>
       <p>

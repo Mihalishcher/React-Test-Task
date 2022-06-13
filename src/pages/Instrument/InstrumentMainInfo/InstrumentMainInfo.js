@@ -2,10 +2,9 @@ import { Component } from 'react';
 import cn from 'classnames';
 
 import MillComponent from './MillComponent';
-import Toolbar from './Toolbar';
-import AddFormInstrument from './AddFormInstrument';
 
 import './css/InstrumentMainInfo.css';
+import InstrumentMainInfoView from './InstrumentMainInfoView';
 
 class InstrumentMainInfo extends Component {
   constructor(props) {
@@ -215,19 +214,15 @@ class InstrumentMainInfo extends Component {
     });
 
     return (
-      <div className="instrument-main">
-        <Toolbar
-          onClickAddElem={() => this.showAddForm()}
-          sortData={this.sortData}
-          onChangeSelect={this.onChangeSelect}
-          toolbarSortSelect={toolbarSortSelect}
-        />
-        <AddFormInstrument
-          visible={visible}
-          onAdd={this.addInstrument}
-        />
-        {elements}
-      </div>
+      <InstrumentMainInfoView
+        onChangeSelect={this.onChangeSelect}
+        showAddForm={this.showAddForm}
+        addInstrument={this.addInstrument}
+        sortData={this.sortData}
+        visible={visible}
+        toolbarSortSelect={toolbarSortSelect}
+        elements={elements}
+      />
     );
   }
 }

@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import CompanyServices from '../../../services/CompanyServices';
 import EmployeeCard from './EmployeeCard';
-import Spinner from '../../../components/Spinner/Spinner';
+import CompanyMainInfoView from './CompanyMainInfoView';
 
 import './css/CompanyMainInfo.css';
 
@@ -45,10 +45,10 @@ class CompanyMainInfo extends Component {
     });
 
     return (
-      <div className="company-main-info">
-        <h2>Наші співробітники</h2>
-        {loading ? <Spinner /> : elements}
-      </div>
+      <CompanyMainInfoView
+        elements={elements}
+        loading={loading}
+      />
     );
   }
 }
