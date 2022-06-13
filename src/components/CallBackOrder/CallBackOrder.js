@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import CallBackOrderView from './CallBackOrderView';
 
 import './CallBackOrder.css';
 
@@ -8,7 +9,8 @@ class CallBackOrder extends Component {
     this.state = {
       phoneNumber: '',
       visibility: false,
-      counter: 30
+      counter: 30,
+      disabledBtn: false
     };
   }
 
@@ -26,55 +28,43 @@ class CallBackOrder extends Component {
     }, 5000);
   };
 
-  enteredPhone = (e) => {
+  onChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  callOrdered = (e) => {
-    const { counter } = this.state;
+  callOrdered = () => {
     this.interval = setInterval(() => {
-      if (counter > 0) {
-        this.setState(({ counter: counter - 1 }));
-      }
+      const { counter } = this.state;
+      this.setState(() => {
+        return {
+          counter: counter > 0 ? counter - 1 : 0
+        };
+      });
     }, 1000);
-    this.setState({ phoneNumber: '' });
-    e.target.disabled = true;
+
+    this.setState({ phoneNumber: '', disabledBtn: true });
   };
 
   closeWindow = () => {
     this.setState({ visibility: false });
+    clearInterval(this.interval);
   };
 
   render() {
-    const { counter, visibility, phoneNumber } = this.state;
-
-    let classCallOrder = 'call-back-order';
-    if (visibility) {
-      classCallOrder += ' visible';
-    }
+    const {
+      counter, visibility, phoneNumber, disabledBtn
+    } = this.state;
 
     return (
-      <div className={classCallOrder}>
-        <p>
-          Ми Вам передзвонимо через
-          <span>{counter}</span>
-          {' '}
-          секунд
-        </p>
-        <input
-          className="input-phone"
-          type="tel"
-          placeholder="+380"
-          onChange={this.enteredPhone}
-          name="phoneNumber"
-          value={phoneNumber}
-        />
-        <div className="btn-group">
-          <button onClick={this.callOrdered} type="button" className="btn-sub">Замовити</button>
-          <button onClick={this.closeWindow} type="button" className="btn-sub">Закрити</button>
-        </div>
-
-      </div>
+      <CallBackOrderView
+        counter={counter}
+        visibility={visibility}
+        phoneNumber={phoneNumber}
+        disabledBtn={disabledBtn}
+        closeWindow={this.closeWindow}
+        callOrdered={this.callOrdered}
+        onChange={this.onChange}
+      />
     );
   }
 }

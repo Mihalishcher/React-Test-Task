@@ -19,16 +19,21 @@ function MillComponent({
         <br />
         <p>
           Діаметер інструменту:
+          {' '}
           {property.diameter}
+          {' '}
+          мм
         </p>
         <p>
           Довжина інструменту:
+          {' '}
           {property.height}
           {' '}
           мм
         </p>
         <p>
           Кількість ріжучіх кромок:
+          {' '}
           {property.tooth}
           {' '}
           шт
@@ -38,6 +43,7 @@ function MillComponent({
       <div className="mill-price">
         <p>
           Ціна:
+          {' '}
           {price}
           $
         </p>

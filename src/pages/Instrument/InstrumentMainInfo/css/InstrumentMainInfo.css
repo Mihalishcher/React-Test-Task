@@ -22,3 +22,7 @@
 .active {
     background-color: rgb(186, 184, 184);
 }
+
+.millHidden {
+    visibility: hidden;
+}

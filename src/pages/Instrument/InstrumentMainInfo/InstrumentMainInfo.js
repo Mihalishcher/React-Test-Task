@@ -1,4 +1,6 @@
 import { Component } from 'react';
+import cn from 'classnames';
+
 import MillComponent from './MillComponent';
 import Toolbar from './Toolbar';
 import AddFormInstrument from './AddFormInstrument';
@@ -35,29 +37,30 @@ class InstrumentMainInfo extends Component {
           name: 'H-D-5.0', id: 7, price: 50, property: { diameter: 5, height: 30, tooth: 2 }, active: false
         },
         {
-          name: 'BUR16.0', id: 8, price: 330, property: { diameter: 16, height: 25, tooth: 2 }, active: false
+          name: 'BUR16.0', id: 8, price: 330, property: { diameter: 16, height: 250, tooth: 2 }, active: false
         },
         {
           name: 'KENAME3.0', id: 9, price: 220, property: { diameter: 3, height: 50, tooth: 2 }, active: false
         }
       ],
       visible: false,
+      sortBy: null,
+      toolbarSortSelect: 'name',
       tookedItem: '',
-      activeId: 0
+      activeId: 0,
+      millHidden: true,
     };
     this.maxIndex = 10;
   }
 
-  sortData = (field) => {
-    this.setState(({ data }) => {
-      const oldState = [...data];
-      oldState.sort(this.sortMethod(field));
-      if (oldState[0].id === data[0].id) {
-        oldState.reverse();
-      }
-      return { data: oldState };
-    });
-    this.activeLine(null);
+  onChangeSelect = (event) => {
+    this.setState({ toolbarSortSelect: event.target.value });
+  };
+
+  showAddForm = () => {
+    this.setState(({ visible }) => ({
+      visible: !visible
+    }));
   };
 
   deleteItem = (id) => {
@@ -69,7 +72,7 @@ class InstrumentMainInfo extends Component {
   addInstrument = (value) => {
     const newItem = {
       name: value.name || 'Без назви',
-      id: this.maxIndex + 1,
+      id: this.maxIndex,
       price: value.price || 0,
       property: {
         diameter: value.diameter || 0,
@@ -78,45 +81,37 @@ class InstrumentMainInfo extends Component {
       },
       active: false
     };
+    this.maxIndex += 1;
     this.setState(({ data }) => {
       return { data: [...data, newItem] };
     });
   };
 
-  showAddForm = () => {
-    this.setState(({ visible }) => ({
-      visible: !visible
-    }));
-  };
-
-  dragStart = (e, item) => {
-    this.setState({ tookedItem: item });
+  dragStart = (item) => {
     setTimeout(() => {
-      e.target.style.visibility = 'hidden';
+      this.setState({ tookedItem: item, millHidden: true });
     }, 0);
     this.activeLine(null);
   };
 
-  dragEnd = (e) => {
-    e.target.style.visibility = 'visible';
+  dragEnd = () => {
+    this.setState({ millHidden: false });
   };
 
   dragOver = (e) => {
     e.preventDefault();
   };
 
-  drop = (e, item) => {
+  drop = (item) => {
     const { tookedItem } = this.state;
     this.setState(({ data }) => {
       return {
         data: data.map((mill) => {
           if (mill.id === item.id) {
-            e.target.style.background = null;
-            return { ...tookedItem };
+            return tookedItem;
           }
           if (mill.id === tookedItem.id) {
-            e.target.style.background = null;
-            return { ...item };
+            return item;
           }
           return mill;
         })
@@ -125,30 +120,16 @@ class InstrumentMainInfo extends Component {
   };
 
   activeLine = (itemID) => {
-    const { activeId } = this.state;
-    this.setState({ activeId: itemID });
     this.setState(({ data }) => {
-      const newArr = data.map((item) => {
-        let newItem = {};
-        if (itemID === null) {
-          newItem = { ...item, active: false };
-          return newItem;
-        }
-        if (itemID !== activeId && item.id === activeId) {
-          newItem = { ...item, active: false };
-          return newItem;
-        }
-        if (item.id === itemID) {
-          newItem = { ...item, active: !item.active };
-          return newItem;
-        }
-        return item;
-      });
-      return { data: newArr };
+      const newArr = data.map((item) => ({
+        ...item,
+        active: ((item.id === itemID)) ? !item.active : false
+      }));
+      return { data: newArr, activeId: itemID };
     });
   };
 
-  checkKeyIndex = (e, index, key) => {
+  checkKeyIndex = (index, e, key) => {
     return (index !== -1 && e.code === key);
   };
 
@@ -159,19 +140,33 @@ class InstrumentMainInfo extends Component {
     });
     const index = IDs.indexOf(activeId);
 
-    if (this.checkKeyIndex(e, index, 'ArrowDown') && activeId !== IDs[IDs.length - 1]) {
+    if (this.checkKeyIndex(index, e, 'ArrowDown') && activeId !== IDs[IDs.length - 1]) {
       e.preventDefault();
       this.activeLine(IDs[index + 1]);
       window.scrollBy(0, 184);
     }
-    if (this.checkKeyIndex(e, index, 'ArrowUp') && activeId !== IDs[0]) {
+    if (this.checkKeyIndex(index, e, 'ArrowUp') && activeId !== IDs[0]) {
       e.preventDefault();
       this.activeLine(IDs[index - 1]);
       window.scrollBy(0, -184);
     }
-    if (this.checkKeyIndex(e, index, 'Delete')) {
+    if (this.checkKeyIndex(index, e, 'Delete')) {
       this.deleteItem(activeId);
     }
+  };
+
+  sortData = () => {
+    const { sortBy, toolbarSortSelect } = this.state;
+    this.setState(({ data }) => {
+      const oldState = [...data];
+      if (sortBy === toolbarSortSelect) {
+        oldState.reverse();
+        return { data: oldState };
+      }
+      oldState.sort(this.sortMethod(toolbarSortSelect));
+      return { data: oldState, sortBy: toolbarSortSelect };
+    });
+    this.activeLine(null);
   };
 
   includes(field) {
@@ -186,26 +181,28 @@ class InstrumentMainInfo extends Component {
   }
 
   render() {
-    const { data, visible } = this.state;
+    const {
+      data, visible, toolbarSortSelect, tookedItem, millHidden
+    } = this.state;
 
     const elements = data.map((item) => {
       const {
         id, name, price, property, active
       } = item;
-      const millCompStyle = `millComp ${active ? 'active' : ''}`;
+
       return (
         <div
-          className={millCompStyle}
+          className={cn('millComp', { active }, { millHidden: (tookedItem.id === id && millHidden) })}
           role="presentation"
-          onKeyDown={(e) => this.keyboardHandler(e)}
-          tabIndex={id}
           key={id}
+          tabIndex={id}
           draggable
+          onKeyDown={(e) => this.keyboardHandler(e)}
           onClick={() => this.activeLine(item.id)}
-          onDragStart={(e) => this.dragStart(e, item)}
-          onDragEnd={(e) => this.dragEnd(e)}
+          onDragStart={() => this.dragStart(item)}
+          onDragEnd={() => this.dragEnd()}
           onDragOver={(e) => this.dragOver(e)}
-          onDrop={(e) => this.drop(e, item)}
+          onDrop={() => this.drop(item)}
         >
           <MillComponent
             name={name}
@@ -222,6 +219,8 @@ class InstrumentMainInfo extends Component {
         <Toolbar
           onClickAddElem={() => this.showAddForm()}
           sortData={this.sortData}
+          onChangeSelect={this.onChangeSelect}
+          toolbarSortSelect={toolbarSortSelect}
         />
         <AddFormInstrument
           visible={visible}

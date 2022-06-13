@@ -2,6 +2,7 @@ import { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import './css/AddFormInstrument.css';
+import AddFormInstrumentView from './AddFormInstrumentView';
 
 class AddFormInstrument extends Component {
   constructor(props) {
@@ -38,34 +39,29 @@ class AddFormInstrument extends Component {
     } = this.state;
     const { visible } = this.props;
 
-    let className = 'add-form-instrument';
-    if (visible) {
-      className += ' visible';
-    }
-
     const inputs = [
       {
-        label: 'Назва інструменту:', type: 'text', prop: 'name', stateValue: name, id: 1
+        label: 'Назва інструменту: ', type: 'text', prop: 'name', stateValue: name
       },
       {
-        label: 'Діаметер інструменту:', type: 'number', prop: 'diameter', stateValue: diameter, id: 2
+        label: 'Діаметер інструменту: ', type: 'number', prop: 'diameter', stateValue: diameter
       },
       {
-        label: 'Довжина інструменту:', type: 'number', prop: 'height', stateValue: height, id: 3
+        label: 'Довжина інструменту: ', type: 'number', prop: 'height', stateValue: height
       },
       {
-        label: 'Кількість ріжучих кромок:', type: 'number', prop: 'tooth', stateValue: tooth, id: 4
+        label: 'Кількість ріжучих кромок: ', type: 'number', prop: 'tooth', stateValue: tooth
       },
       {
-        label: 'Ціна ($):', type: 'number', prop: 'price', stateValue: price, id: 5
+        label: 'Ціна ($): ', type: 'number', prop: 'price', stateValue: price
       },
     ];
 
     const inputElements = inputs.map(({
-      label, type, prop, stateValue, id
+      label, type, prop, stateValue
     }) => {
       return (
-        <div key={id}>
+        <div key={label}>
           <label htmlFor={prop}>{label}</label>
           <input
             type={type}
@@ -79,12 +75,11 @@ class AddFormInstrument extends Component {
     });
 
     return (
-      <div className={className}>
-        <form onSubmit={this.onSubmit}>
-          {inputElements}
-          <button className="add-btn" type="submit">Додати елемент</button>
-        </form>
-      </div>
+      <AddFormInstrumentView
+        onSubmit={this.onSubmit}
+        visible={visible}
+        inputElements={inputElements}
+      />
     );
   }
 }
