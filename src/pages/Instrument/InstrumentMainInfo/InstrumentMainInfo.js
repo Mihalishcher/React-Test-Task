@@ -1,7 +1,4 @@
 import { Component } from 'react';
-import cn from 'classnames';
-
-import MillComponent from './MillComponent';
 
 import './css/InstrumentMainInfo.css';
 import InstrumentMainInfoView from './InstrumentMainInfoView';
@@ -45,7 +42,7 @@ class InstrumentMainInfo extends Component {
       visible: false,
       sortBy: null,
       toolbarSortSelect: 'name',
-      tookedItem: '',
+      tookedItem: {},
       activeId: 0,
       millHidden: true,
     };
@@ -72,11 +69,11 @@ class InstrumentMainInfo extends Component {
     const newItem = {
       name: value.name || 'Без назви',
       id: this.maxIndex,
-      price: value.price || 0,
+      price: +value.price || 0,
       property: {
-        diameter: value.diameter || 0,
-        height: value.height || 0,
-        tooth: value.tooth || 0
+        diameter: +value.diameter || 0,
+        height: +value.height || 0,
+        tooth: +value.tooth || 0
       },
       active: false
     };
@@ -95,6 +92,7 @@ class InstrumentMainInfo extends Component {
 
   dragEnd = () => {
     this.setState({ millHidden: false });
+    this.activeLine(null);
   };
 
   dragOver = (e) => {
@@ -184,44 +182,25 @@ class InstrumentMainInfo extends Component {
       data, visible, toolbarSortSelect, tookedItem, millHidden
     } = this.state;
 
-    const elements = data.map((item) => {
-      const {
-        id, name, price, property, active
-      } = item;
-
-      return (
-        <div
-          className={cn('millComp', { active }, { millHidden: (tookedItem.id === id && millHidden) })}
-          role="presentation"
-          key={id}
-          tabIndex={id}
-          draggable
-          onKeyDown={(e) => this.keyboardHandler(e)}
-          onClick={() => this.activeLine(item.id)}
-          onDragStart={() => this.dragStart(item)}
-          onDragEnd={() => this.dragEnd()}
-          onDragOver={(e) => this.dragOver(e)}
-          onDrop={() => this.drop(item)}
-        >
-          <MillComponent
-            name={name}
-            price={price}
-            property={property}
-            onDelete={() => this.deleteItem(id)}
-          />
-        </div>
-      );
-    });
-
     return (
       <InstrumentMainInfoView
+        data={data}
+        visible={visible}
+        toolbarSortSelect={toolbarSortSelect}
+        tookedItem={tookedItem}
+        millHidden={millHidden}
         onChangeSelect={this.onChangeSelect}
         showAddForm={this.showAddForm}
         addInstrument={this.addInstrument}
         sortData={this.sortData}
-        visible={visible}
-        toolbarSortSelect={toolbarSortSelect}
-        elements={elements}
+        keyboardHandler={this.keyboardHandler}
+        dragStart={this.dragStart}
+        dragEnd={this.dragEnd}
+        dragOver={this.dragOver}
+        drop={this.drop}
+        activeLine={this.activeLine}
+        deleteItem={this.deleteItem}
+
       />
     );
   }

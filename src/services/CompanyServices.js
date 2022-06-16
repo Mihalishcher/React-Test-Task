@@ -18,14 +18,38 @@ class CompanyServices {
     return this._transformEmployees(res.data.data.results); // eslint-disable-line
   };
 
-  cheakCharacter = (char) => {
+  checkKey = (key) => {
+    return (key === 'name'
+      || key === 'thumbnail'
+      || key === 'urls'
+      || key === 'description'
+      || key === 'id');
+  };
+
+  reformeEmployees = (chars) => {
+    const keys = Object.keys(chars[0]);
+    const reformatedArr = [];
+
+    for (let i = 0; i < chars.length; i += 1) {
+      const newObj = {};
+      keys.forEach((key) => {
+        if (this.checkKey(key)) {
+          newObj[key] = chars[i][key];
+        }
+      });
+      reformatedArr.push(newObj);
+    }
+    return reformatedArr;
+  };
+
+  checkCharacter = (char) => {
     const noImage = 'image_not_available';
     return (char.description && !char.thumbnail.path.includes(noImage));
   };
 
   _transformEmployees = (chars) => {
-    const numberOfEmployees = 12;
-    return chars.filter(this.cheakCharacter).slice(0, numberOfEmployees);
+    const numberOfEmployees = 11;
+    return this.reformeEmployees(chars.filter(this.checkCharacter).slice(0, numberOfEmployees));
   };
 }
 
