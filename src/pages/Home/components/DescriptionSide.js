@@ -1,4 +1,4 @@
-import './css/DescriptionSide.css';
+import '../css/DescriptionSide.css';
 
 function DescriptionSide() {
   return (

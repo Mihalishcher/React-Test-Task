@@ -3,7 +3,7 @@
     margin-bottom: 25px;
     box-shadow: 10px 15px 20px rgba(255, 238, 5, 0.4);
     border-radius: 7px;
-    background-image: url(../../Resources/Images/headerbackground.jpg);
+    background-image: url(../../../assets/Images/headerbackground.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }

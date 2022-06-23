@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import Images from '../../../components/Resources/Images';
+import Images from '../../../assets/Images';
 
-import './css/MillComponent.css';
+import '../css/MillComponent.css';
 
 function MillComponent({
   name, price, property, onDelete

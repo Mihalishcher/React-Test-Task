@@ -1,8 +1,6 @@
 import { Component } from 'react';
 import CallBackOrderView from './CallBackOrderView';
 
-import './CallBackOrder.css';
-
 class CallBackOrder extends Component {
   constructor(props) {
     super(props);

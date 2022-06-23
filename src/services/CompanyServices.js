@@ -18,28 +18,16 @@ class CompanyServices {
     return this._transformEmployees(res.data.data.results); // eslint-disable-line
   };
 
-  checkKey = (key) => {
-    return (key === 'name'
-      || key === 'thumbnail'
-      || key === 'urls'
-      || key === 'description'
-      || key === 'id');
-  };
-
   reformeEmployees = (chars) => {
-    const keys = Object.keys(chars[0]);
-    const reformatedArr = [];
-
-    for (let i = 0; i < chars.length; i += 1) {
-      const newObj = {};
-      keys.forEach((key) => {
-        if (this.checkKey(key)) {
-          newObj[key] = chars[i][key];
+    return chars.reduce((acc, {
+      id, name, thumbnail, urls, description
+    }) => {
+      return [...acc,
+        {
+          id, name, thumbnail, urls, description
         }
-      });
-      reformatedArr.push(newObj);
-    }
-    return reformatedArr;
+      ];
+    }, []);
   };
 
   checkCharacter = (char) => {

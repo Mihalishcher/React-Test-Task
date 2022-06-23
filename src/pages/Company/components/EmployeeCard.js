@@ -1,12 +1,10 @@
 import PropTypes from 'prop-types';
 
-import './css/EmployeeCard.css';
+import '../css/EmployeeCard.css';
 
 function EmployeeCard({
-  name, image, description, url
+  name, image, description, urlWiki
 }) {
-  const urlWiki = url.urls[0].url;
-
   return (
     <>
       <img className="employee-photo" src={`${image.path}.${image.extension}`} alt="Employee" />
@@ -25,7 +23,7 @@ EmployeeCard.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.objectOf(PropTypes.string).isRequired,
   description: PropTypes.string.isRequired,
-  url: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string))).isRequired
+  urlWiki: PropTypes.string.isRequired
 };
 
 export default EmployeeCard;

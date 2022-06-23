@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import './css/Toolbar.css';
+import '../css/Toolbar.css';
 
 function Toolbar({
   onClickAddElem, sortData, onChangeSelect, toolbarSortSelect

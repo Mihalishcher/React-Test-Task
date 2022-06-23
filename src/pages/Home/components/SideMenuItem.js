@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import './css/SideMenuItem.css';
+import '../css/SideMenuItem.css';
 
 function SideMenuItem({ logo, name, url }) {
   return (

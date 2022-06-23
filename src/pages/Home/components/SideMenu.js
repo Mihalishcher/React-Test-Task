@@ -1,7 +1,7 @@
-import Images from '../../../components/Resources/Images';
+import Images from '../../../assets/Images';
 import SideMenuItem from './SideMenuItem';
 
-import './css/SideMenu.css';
+import '../css/SideMenu.css';
 
 function SideMenu() {
   return (

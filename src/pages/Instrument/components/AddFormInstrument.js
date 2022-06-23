@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import './css/AddFormInstrument.css';
 import AddFormInstrumentView from './AddFormInstrumentView';
 
 class AddFormInstrument extends Component {
@@ -57,28 +56,12 @@ class AddFormInstrument extends Component {
       },
     ];
 
-    const inputElements = inputs.map(({
-      label, type, prop, stateValue
-    }) => {
-      return (
-        <div key={label}>
-          <label htmlFor={prop}>{label}</label>
-          <input
-            type={type}
-            id={prop}
-            onChange={this.onValueChange}
-            name={prop}
-            value={stateValue}
-          />
-        </div>
-      );
-    });
-
     return (
       <AddFormInstrumentView
         onSubmit={this.onSubmit}
         visible={visible}
-        inputElements={inputElements}
+        inputs={inputs}
+        onValueChange={this.onValueChange}
       />
     );
   }

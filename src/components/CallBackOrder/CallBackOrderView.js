@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 
+import './css/CallBackOrderView.css';
+
 function CallBackOrderView(props) {
   const {
     visibility, onChange, closeWindow, callOrdered, counter, phoneNumber, disabledBtn

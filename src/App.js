@@ -1,14 +1,14 @@
 import { Routes, Route } from 'react-router-dom';
 
-import Home from '../../pages/Home/Home';
-import Company from '../../pages/Company/Company';
-import Obladnanya from '../../pages/Obladnanya/Obladnanya';
-import Instrument from '../../pages/Instrument/Instrument';
-import Obrobka from '../../pages/Obrobka/Obrobka';
-import Inzhiniring from '../../pages/Inzhiniring/Inzhiniring';
-import Contacts from '../../pages/Contacts/Contacts';
+import Home from './pages/Home/Home';
+import Company from './pages/Company/Company';
+import Obladnanya from './pages/Obladnanya/Obladnanya';
+import Instrument from './pages/Instrument/Instrument';
+import Obrobka from './pages/Obrobka/Obrobka';
+import Inzhiniring from './pages/Inzhiniring/Inzhiniring';
+import Contacts from './pages/Contacts/Contacts';
 
-import './App.css';
+import './styles/App.css';
 
 function App() {
   return (

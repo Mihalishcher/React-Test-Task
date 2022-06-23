@@ -1,6 +1,6 @@
-import Images from '../Resources/Images';
+import Images from '../../assets/Images';
 
-import './Banner.css';
+import './css/Banner.css';
 
 function Banner() {
   return (

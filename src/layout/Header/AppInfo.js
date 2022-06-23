@@ -1,4 +1,4 @@
-import Images from '../Resources/Images';
+import Images from '../../assets/Images';
 
 import './css/AppInfo.css';
 

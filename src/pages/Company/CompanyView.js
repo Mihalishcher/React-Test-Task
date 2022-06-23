@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Spinner from '../../../components/Spinner/Spinner';
-import EmployeeCard from './EmployeeCard';
+import Spinner from '../../components/Spinner/Spinner';
+import EmployeeCard from './components/EmployeeCard';
 
 import './css/CompanyMainInfoView.css';
 
@@ -22,7 +22,7 @@ function CompanyMainInfoView({
           name={name}
           image={thumbnail}
           description={description}
-          url={{ urls }}
+          urlWiki={urls[0].url}
         />
       </li>
     );

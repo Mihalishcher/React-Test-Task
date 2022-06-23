@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 
-import Toolbar from './Toolbar';
-import AddFormInstrument from './AddFormInstrument';
-import MillComponent from './MillComponent';
+import Toolbar from './components/Toolbar';
+import AddFormInstrument from './components/AddFormInstrument';
+import MillComponent from './components/MillComponent';
 
 function InstrumentMainInfoView({
   showAddForm, sortData, onChangeSelect, toolbarSortSelect,
