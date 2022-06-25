@@ -3,32 +3,37 @@
     width: 96%;
     border-radius: 7px;
     height: 30px;
-    background-color: rgb(101, 99, 99);
+    background-color: var(--bg-color);
     display: flex;
 }
 
 .add-btn {
+    color: var(--text-color);
     margin-left: 5px;
     height: 20px;
     margin-top: 5px;
     border-radius: 7px;
-    background-color: white;
+    background-color: var(--buttons-color);
+    border-color: var(--border-color);
 }
 
 .sort-list {
-    border: 2px solid black;
+    color: var(--text-color);
+    border: 2px solid var(--border-color);
     margin-right: 5px;
     height: 20px;
     margin-top: 5px;
     border-radius: 7px;
-    background-color: white;
+    background-color: var(--buttons-color);
 }
 
 .sort-btn {
+    color: var(--text-color);
     margin: 0 15px 0 0;
     height: 20px;
     margin-top: 5px;
     border-radius: 7px;
-    background-color: white;
+    background-color: var(--buttons-color);
     cursor: pointer;
+    border-color: var(--border-color);
 }

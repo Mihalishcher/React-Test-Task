@@ -1,10 +1,6 @@
-.red {
-    background-color: red;
-}
-
 .mill-photo {
     width: 148px;
-    border: 1px solid black;
+    border: 1px solid var(--border-color);
     border-radius: 7px;
 }
 
@@ -20,6 +16,7 @@
 }
 
 .mill-price p {
+    color: var(--text-color);
     display: flex;
     margin: 70px 0 0 100px;
 
@@ -30,8 +27,6 @@
 }
 
 .delete-logo {
-    margin-top: 20px;
-    margin-right: 20px;
     display: inline-flex;
     width: 30px;
     height: 30px;

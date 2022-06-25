@@ -1,8 +1,9 @@
 .company-main-info {
+    color: var(--text-color);
     border-radius: 10px;
     padding: 30px 0 0 30px;
-    background-color: rgba(243, 243, 240, 0.9);
-    box-shadow: 10px 15px 20px rgba(2255, 255, 255, 0.4);
+    background-color: var(--bg-color);
+    box-shadow: var(--main-shadow);
     margin: 0 auto;
     padding: 20px;
 }
@@ -13,7 +14,7 @@
 
 .employee-card {
     display: flex;
-    border: 2px solid black;
+    border: 2px solid var(--border-color);
     border-radius: 7px;
     margin: 20px auto;
     padding: 10px;

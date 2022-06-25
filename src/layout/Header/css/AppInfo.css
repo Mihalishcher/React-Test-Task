@@ -27,13 +27,23 @@
 .contact-info a:hover {
     text-decoration: none;
     border-radius: 2px;
-    background-color: #ffee05;
-    color: rgba(61, 90, 128)
+    background-color: rgba(255, 238, 5, 0.8);
+    color: rgba(0, 0, 0)
 }
 
 .contact-info p {
     color: rgb(255, 255, 255);
     font-weight: 700;
+}
+
+.dayAndNightMode {
+    height: 40px;
+    margin: 10px 10px 0 0;
+    padding: 0;
+    background-color: rgb(255, 247, 0);
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid black;
 }
 
 @media screen and (max-width: 768px) {

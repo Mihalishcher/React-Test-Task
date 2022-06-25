@@ -7,7 +7,7 @@
     display: flex;
     height: 190px;
     margin-bottom: 25px;
-    box-shadow: 10px 15px 20px rgba(184, 184, 182, 0.4);
+    box-shadow: var(--main-shadow);
 }
 
 .label {

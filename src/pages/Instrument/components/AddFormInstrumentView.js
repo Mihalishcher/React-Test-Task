@@ -36,7 +36,7 @@ function AddFormInstrumentView({
 
 AddFormInstrumentView.propTypes = {
   visible: PropTypes.bool.isRequired,
-  inputs: PropTypes.arrayOf(PropTypes.oneOfType(PropTypes.string, PropTypes.number)).isRequired,
+  inputs: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)).isRequired,
   onSubmit: PropTypes.func.isRequired,
   onValueChange: PropTypes.func.isRequired
 };

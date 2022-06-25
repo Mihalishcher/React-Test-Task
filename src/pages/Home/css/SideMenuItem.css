@@ -5,7 +5,7 @@
 }
 
 .aside-div img {
-    border: 2px solid rgba(0, 81, 255, 0.6);
+    border: 2px solid var(--border-color);
     border-radius: 50%;
     vertical-align: middle;
     margin-right: 20px;
@@ -18,14 +18,15 @@
     padding-right: 4px;
     text-decoration: none;
     font-weight: bold;
-    color: rgb(0, 81, 255);
+    color: var(--text-color);
 }
 
 .aside-div a:hover, .aside-div img:hover {
-    background-color: rgba(0, 81, 255, 0.6);
+    border-color: var(--border-color);
+    background-color: var(--border-color);
     border-radius: 25px;
     box-shadow: 20px 15px 20px rgba(0, 0, 0, 0.3);
-    color: rgb(255, 238, 5);
+    color: var(--link-color);
 }
 
 .aside-div a img:hover {

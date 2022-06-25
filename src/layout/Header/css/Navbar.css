@@ -13,7 +13,7 @@ nav li {
 
 nav a {
     font-size: 18px;
-    color: rgb(0, 100, 255);
+    color: var(--nav-bar-color);
     display: inline-block;
     margin: 10px 10px 30px 10px;
     padding: 7px;
@@ -22,15 +22,15 @@ nav a {
 
 nav a:hover {
     text-decoration: none;
-    border-radius: 8px;
-    background-color: rgba(61, 90, 128);
+    border-radius: 4px;
+    background-color: var(--nav-bar-color);
     color: #ffee05;
 }
 
 nav .active {
     text-decoration: none;
-    border-radius: 8px;
-    background-color: rgba(61, 90, 128);
+    border-radius: 4px;
+    background-color: var(--nav-bar-color);
     color: #ffee05;
 }
 

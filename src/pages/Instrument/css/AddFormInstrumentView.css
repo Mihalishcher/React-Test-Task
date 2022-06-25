@@ -1,12 +1,12 @@
 .add-form-instrument {
-    width: 95%;
+    width: 96%;
     margin-top: 10px;
-    background-color: rgb(101, 99, 99);
+    background-color: var(--bg-color);
     height: 140px;
     border-radius: 7px;
-    color: white;
+    color: var(--text-color);
     display: none;
-    border: 2px solid black;
+    border: 2px solid var(--border-color);
     height: 0px;
     opacity: 0;
     animation: showForm 1s forwards;
@@ -34,11 +34,12 @@ input {
     margin-top: 2px;
     padding-left: 5px;
     border-radius: 7px;
-    border: 1px solid black;
+    border: 1px solid var(--border-color);
 }
 
 input:focus {
-    background-color: rgb(176, 173, 173);
+    color: var(--text-color);
+    background-color: var(--active-instrument);
 }
 
 .add-btn {

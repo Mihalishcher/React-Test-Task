@@ -1,17 +1,26 @@
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import ThemeContext from '../context/ThemeContext';
 
-import Header from './Header/Header';
-import Banner from './Banner/Banner';
-import Footer from './Footer/Footer';
+import LayoutView from './LayoutView';
 
 function Layout({ children }) {
+  const lastUsedTheme = localStorage.getItem('app-theme') === 'dark' ? 'dark' : null;
+  const [theme, setTheme] = useState(lastUsedTheme);
+  const { Provider } = ThemeContext;
+
+  useEffect(() => {
+    localStorage.setItem('app-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme ? null : 'dark');
+  };
+
   return (
-    <div>
-      <Header />
-      <Banner />
-      {children}
-      <Footer />
-    </div>
+    <Provider value={toggleTheme}>
+      <LayoutView theme={theme}>{children}</LayoutView>
+    </Provider>
   );
 }
 

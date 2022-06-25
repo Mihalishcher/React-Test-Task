@@ -6,7 +6,7 @@
 }
 
 .employee-name {
-    color: rgb(30, 29, 29);
+    color: var(--text-color);
     padding: 20px 0 20px 20px;
     text-decoration: underline;
 }
@@ -20,5 +20,5 @@
 }
 
 .employee-name a {
-    color: black
+    color: var(--text-color)
 }

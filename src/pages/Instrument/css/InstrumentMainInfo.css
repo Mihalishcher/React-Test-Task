@@ -1,9 +1,10 @@
 .instrument-main {
-    background-color: rgba(243, 243, 240, 0.9);
-    border: 2px solid black;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    border: 2px solid var(--border-color);
     border-radius: 7px;
     min-height: 160px;
-    box-shadow: 10px 15px 20px rgba(2255, 255, 255, 0.4);
+    box-shadow: var(--main-shadow);
 }
 
 .millComp {
@@ -11,7 +12,7 @@
     display: flex;
     width: 95%;
     height: 150px;
-    border: 2px solid black;
+    border: 2px solid var(--border-color);
     border-radius: 7px;
     padding: 10px 5px;
     margin-bottom: 10px;
@@ -20,7 +21,7 @@
 }
 
 .active {
-    background-color: rgb(186, 184, 184);
+    background-color: var(--active-instrument);
 }
 
 .millHidden {

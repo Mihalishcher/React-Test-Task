@@ -1,9 +1,9 @@
 .header {
     min-width: 430px;
     margin-bottom: 25px;
-    box-shadow: 10px 15px 20px rgba(255, 238, 5, 0.4);
+    box-shadow: var(--header-shadow);
     border-radius: 7px;
-    background-image: url(../../../assets/Images/headerbackground.jpg);
+    background-image: var(--banner-img);
     background-size: cover;
     background-repeat: no-repeat;
 }
