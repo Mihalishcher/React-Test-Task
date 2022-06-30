@@ -35,7 +35,7 @@ function InstrumentMainInfoView({
           name={name}
           price={price}
           property={property}
-          onDelete={() => deleteItem(id)}
+          onDelete={(e) => deleteItem(id, e)}
         />
       </div>
     );

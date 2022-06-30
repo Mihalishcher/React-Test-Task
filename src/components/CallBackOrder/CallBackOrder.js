@@ -1,70 +1,52 @@
-import { Component } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import CallBackOrderView from './CallBackOrderView';
 
-class CallBackOrder extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      phoneNumber: '',
-      visibility: false,
-      counter: 30,
-      disabledBtn: false
-    };
-  }
+function CallBackOrder() {
+  const [phoneNumber, setPhonenumber] = useState('');
+  const [visibility, setVisibility] = useState(false);
+  const [counter, setCounter] = useState(30);
+  const [disabledBtn, setDisabledBtn] = useState(false);
+  const interval = useRef(null);
 
-  componentDidMount() {
-    this.showCallOrderForm();
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  showCallOrderForm = () => {
+  const showCallOrderForm = () => {
     setTimeout(() => {
-      this.setState({ visibility: true });
+      setVisibility(true);
     }, 5000);
   };
 
-  onChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+  useEffect(() => {
+    showCallOrderForm();
+    return () => { clearInterval(interval.current); };
+  }, []);
+
+  const onChange = (e) => {
+    setPhonenumber(e.target.value);
   };
 
-  callOrdered = () => {
-    this.interval = setInterval(() => {
-      const { counter } = this.state;
-      this.setState(() => {
-        return {
-          counter: counter > 0 ? counter - 1 : 0
-        };
-      });
+  const callOrdered = () => {
+    interval.current = setInterval(() => {
+      setCounter((prevCounter) => (prevCounter > 0 ? prevCounter - 1 : 0));
     }, 1000);
-
-    this.setState({ phoneNumber: '', disabledBtn: true });
+    setPhonenumber('');
+    setDisabledBtn(true);
   };
 
-  closeWindow = () => {
-    this.setState({ visibility: false });
-    clearInterval(this.interval);
+  const closeWindow = () => {
+    setVisibility(false);
+    clearInterval(interval.current);
   };
 
-  render() {
-    const {
-      counter, visibility, phoneNumber, disabledBtn
-    } = this.state;
-
-    return (
-      <CallBackOrderView
-        counter={counter}
-        visibility={visibility}
-        phoneNumber={phoneNumber}
-        disabledBtn={disabledBtn}
-        closeWindow={this.closeWindow}
-        callOrdered={this.callOrdered}
-        onChange={this.onChange}
-      />
-    );
-  }
+  return (
+    <CallBackOrderView
+      counter={counter}
+      visibility={visibility}
+      phoneNumber={phoneNumber}
+      disabledBtn={disabledBtn}
+      closeWindow={closeWindow}
+      callOrdered={callOrdered}
+      onChange={onChange}
+    />
+  );
 }
 
 export default CallBackOrder;
