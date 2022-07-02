@@ -1,28 +1,15 @@
-import axios from 'axios';
+import { useAxios } from '../hooks/axios.hook';
 
-class CompanyServices {
-  _API_KEY = '825446dc6e5485732825bdf5f618ca71';
+function useCompanyServices() {
+  const API_KEY = '825446dc6e5485732825bdf5f618ca71';
+  const { loading, error, request } = useAxios();
 
-  getResource = (url) => {
-    return axios.get(url, {
-      params: {
-        apikey: this._API_KEY, // eslint-disable-line
-        limit: 100,
-        orderBy: '-name'
-      }
-    });
-  };
-
-  getAllEmployees = async () => {
-    const res = await this.getResource('https://gateway.marvel.com:443/v1/public/characters');
-    return this._transformEmployees(res.data.data.results); // eslint-disable-line
-  };
-
-  reformeEmployees = (chars) => {
+  const reformeEmployees = (chars) => {
     return chars.reduce((acc, {
       id, name, thumbnail, urls, description
     }) => {
-      return [...acc,
+      return [
+        ...acc,
         {
           id, name, thumbnail, urls, description
         }
@@ -30,15 +17,22 @@ class CompanyServices {
     }, []);
   };
 
-  checkCharacter = (char) => {
+  const checkCharacter = (char) => {
     const noImage = 'image_not_available';
     return (char.description && !char.thumbnail.path.includes(noImage));
   };
 
-  _transformEmployees = (chars) => {
+  const transformEmployees = (chars) => {
     const numberOfEmployees = 11;
-    return this.reformeEmployees(chars.filter(this.checkCharacter).slice(0, numberOfEmployees));
+    return reformeEmployees(chars.filter(checkCharacter).slice(0, numberOfEmployees));
   };
+
+  async function getAllEmployees() {
+    const res = await request('https://gateway.marvel.com:443/v1/public/characters', API_KEY, 100, '-name');
+    return transformEmployees(res.data.data.results);
+  }
+
+  return { getAllEmployees, error, loading };
 }
 
-export default CompanyServices;
+export default useCompanyServices;

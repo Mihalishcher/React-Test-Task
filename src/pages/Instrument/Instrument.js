@@ -53,9 +53,8 @@ function InstrumentMainInfo() {
     setVisible(!visible);
   };
 
-  const deleteItem = (id, e) => {
-    e.stopPropagation();
-    setData(data.filter((item) => item.id !== id));
+  const deleteItem = (id) => {
+    setData((prevData) => [...prevData].filter((item) => item.id !== id));
   };
 
   const addInstrument = (value) => {
@@ -71,16 +70,12 @@ function InstrumentMainInfo() {
       active: false
     };
     setMaxIndex(maxIndex + 1);
-    setData([...data, newItem]);
+    setData((prevData) => [...prevData, newItem]);
   };
 
   const activeLine = (itemID) => {
-    // const newData = data.map((item) => ({
-    //   ...item,
-    //   active: (item.id === itemID ? !item.active : false)
-    // }));
     setActiveId(itemID);
-    setData((prevData) => prevData.map((item) => ({
+    setData((prevData) => [...prevData].map((item) => ({
       ...item,
       active: (item.id === itemID ? !item.active : false)
     })));
@@ -136,7 +131,7 @@ function InstrumentMainInfo() {
       window.scrollBy(0, -184);
     }
     if (checkKeyIndex(index, e, 'Delete')) {
-      deleteItem(activeId);
+      deleteItem(activeId, e);
     }
   };
 
@@ -153,12 +148,11 @@ function InstrumentMainInfo() {
 
   const sortData = () => {
     activeLine(null);
-    const newData = [...data];
     if (sortBy === toolbarSortSelect) {
-      return setData(newData.reverse());
+      return setData((prevData) => [...prevData].reverse());
     }
     setSortBy(toolbarSortSelect);
-    return setData((prevData) => (prevData.sort(sortMethod(toolbarSortSelect))));
+    return setData((prevData) => ([...prevData].sort(sortMethod(toolbarSortSelect))));
   };
 
   return (

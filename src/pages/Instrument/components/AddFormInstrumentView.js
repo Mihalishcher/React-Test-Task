@@ -8,7 +8,7 @@ function AddFormInstrumentView({
   onSubmit, visible, inputs, onValueChange
 }) {
   const inputElements = inputs.map(({
-    label, type, prop, stateValue
+    label, type, prop, value
   }) => {
     return (
       <div key={label}>
@@ -18,7 +18,7 @@ function AddFormInstrumentView({
           id={prop}
           onChange={onValueChange}
           name={prop}
-          value={stateValue}
+          value={value}
         />
       </div>
     );

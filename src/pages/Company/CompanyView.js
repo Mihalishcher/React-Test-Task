@@ -5,9 +5,10 @@ import Spinner from '../../components/Spinner/Spinner';
 import EmployeeCard from './components/EmployeeCard';
 
 import './css/CompanyMainInfoView.css';
+import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 
 function CompanyMainInfoView({
-  loading, data
+  loading, data, error
 }) {
   const elements = data.map((employee) => {
     const {
@@ -28,16 +29,31 @@ function CompanyMainInfoView({
     );
   });
 
+  const errorMessage = error ? <ErrorMessage error={error} /> : null;
+  const spinner = loading ? <Spinner /> : null;
+  const content = errorMessage || spinner || elements;
+
   return (
     <div className="company-main-info">
       <h2>Наші співробітники</h2>
-      {loading ? <Spinner /> : elements}
+      {content}
     </div>
   );
 }
 
+CompanyMainInfoView.defaultProps = {
+  data: [{
+    id: 0,
+    name: '',
+    thumbnail: { path: '', extension: '' },
+    description: '',
+    urls: [{ url: '' }]
+  }]
+};
+
 CompanyMainInfoView.propTypes = {
   loading: PropTypes.bool.isRequired,
+  error: PropTypes.string.isRequired,
   data: PropTypes.arrayOf(PropTypes.objectOf(
     PropTypes.oneOfType([
       PropTypes.string,
@@ -45,7 +61,7 @@ CompanyMainInfoView.propTypes = {
       PropTypes.objectOf(PropTypes.string),
       PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string))
     ])
-  )).isRequired
+  ))
 };
 
 export default CompanyMainInfoView;

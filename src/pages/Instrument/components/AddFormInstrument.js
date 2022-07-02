@@ -1,29 +1,25 @@
-import { Component } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import AddFormInstrumentView from './AddFormInstrumentView';
 
-class AddFormInstrument extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: '',
-      price: '',
-      diameter: '',
-      height: '',
-      tooth: ''
-    };
-  }
+function AddFormInstrument({ onAdd, visible }) {
+  const [data, setData] = useState({
+    name: '',
+    price: '',
+    diameter: '',
+    height: '',
+    tooth: ''
+  });
 
-  onValueChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+  const onValueChange = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value });
   };
 
-  onSubmit = (event) => {
-    const { onAdd } = this.props;
+  const onSubmit = (event) => {
     event.preventDefault();
-    onAdd(this.state);
-    this.setState({
+    onAdd(data);
+    setData({
       name: '',
       price: '',
       diameter: '',
@@ -32,39 +28,36 @@ class AddFormInstrument extends Component {
     });
   };
 
-  render() {
-    const {
-      name, price, diameter, height, tooth
-    } = this.state;
-    const { visible } = this.props;
+  const {
+    name, price, diameter, height, tooth
+  } = data;
 
-    const inputs = [
-      {
-        label: 'Назва інструменту: ', type: 'text', prop: 'name', stateValue: name
-      },
-      {
-        label: 'Діаметер інструменту: ', type: 'number', prop: 'diameter', stateValue: diameter
-      },
-      {
-        label: 'Довжина інструменту: ', type: 'number', prop: 'height', stateValue: height
-      },
-      {
-        label: 'Кількість ріжучих кромок: ', type: 'number', prop: 'tooth', stateValue: tooth
-      },
-      {
-        label: 'Ціна ($): ', type: 'number', prop: 'price', stateValue: price
-      },
-    ];
+  const inputs = [
+    {
+      label: 'Назва інструменту: ', type: 'text', prop: 'name', value: name
+    },
+    {
+      label: 'Діаметер інструменту: ', type: 'number', prop: 'diameter', value: diameter
+    },
+    {
+      label: 'Довжина інструменту: ', type: 'number', prop: 'height', value: height
+    },
+    {
+      label: 'Кількість ріжучих кромок: ', type: 'number', prop: 'tooth', value: tooth
+    },
+    {
+      label: 'Ціна ($): ', type: 'number', prop: 'price', value: price
+    },
+  ];
 
-    return (
-      <AddFormInstrumentView
-        onSubmit={this.onSubmit}
-        visible={visible}
-        inputs={inputs}
-        onValueChange={this.onValueChange}
-      />
-    );
-  }
+  return (
+    <AddFormInstrumentView
+      onSubmit={onSubmit}
+      visible={visible}
+      inputs={inputs}
+      onValueChange={onValueChange}
+    />
+  );
 }
 
 AddFormInstrument.propTypes = {

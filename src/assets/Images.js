@@ -11,6 +11,7 @@ import videoBanner1 from './Video/vid1.mp4';
 import videoBanner2 from './Video/vid2.mp4';
 import videoBanner3 from './Video/vid3.mp4';
 import dayNight from './Images/daynight.png';
+import error from './Images/error.gif';
 
 const Images = {
   golovnaLogo1,
@@ -25,7 +26,8 @@ const Images = {
   videoBanner1,
   videoBanner2,
   videoBanner3,
-  dayNight
+  dayNight,
+  error
 };
 
 export default Images;
