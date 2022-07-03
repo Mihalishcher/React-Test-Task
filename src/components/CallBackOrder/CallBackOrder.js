@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import CallBackOrderView from './CallBackOrderView';
 
-function CallBackOrder() {
+const CallBackOrder = () => {
   const [phoneNumber, setPhonenumber] = useState('');
   const [visibility, setVisibility] = useState(false);
   const [counter, setCounter] = useState(30);
@@ -47,6 +47,6 @@ function CallBackOrder() {
       onChange={onChange}
     />
   );
-}
+};
 
 export default CallBackOrder;

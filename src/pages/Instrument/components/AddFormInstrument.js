@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import AddFormInstrumentView from './AddFormInstrumentView';
 
-function AddFormInstrument({ onAdd, visible }) {
+const AddFormInstrument = ({ onAdd, visible }) => {
   const [data, setData] = useState({
     name: '',
     price: '',
@@ -58,7 +58,7 @@ function AddFormInstrument({ onAdd, visible }) {
       onValueChange={onValueChange}
     />
   );
-}
+};
 
 AddFormInstrument.propTypes = {
   visible: PropTypes.bool.isRequired,

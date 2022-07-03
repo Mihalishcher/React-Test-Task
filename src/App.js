@@ -10,7 +10,7 @@ import Contacts from './pages/Contacts/Contacts';
 
 import './styles/App.css';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Routes>
@@ -23,8 +23,7 @@ function App() {
         <Route path="/Contacts" element={<Contacts />} />
       </Routes>
     </div>
-
   );
-}
+};
 
 export default App;

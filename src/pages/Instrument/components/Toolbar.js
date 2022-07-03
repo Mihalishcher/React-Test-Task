@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 
 import '../css/Toolbar.css';
 
-function Toolbar({
+const Toolbar = ({
   onClickAddElem, sortData, onChangeSelect, toolbarSortSelect
-}) {
+}) => {
   return (
     <div className="toolbar">
       <button
@@ -35,7 +35,7 @@ function Toolbar({
       </button>
     </div>
   );
-}
+};
 
 Toolbar.propTypes = {
   sortData: PropTypes.func.isRequired,

@@ -7,9 +7,9 @@ import EmployeeCard from './components/EmployeeCard';
 import './css/CompanyMainInfoView.css';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 
-function CompanyMainInfoView({
+const CompanyMainInfoView = ({
   loading, data, error
-}) {
+}) => {
   const elements = data.map((employee) => {
     const {
       id, name, thumbnail, description, urls
@@ -39,7 +39,7 @@ function CompanyMainInfoView({
       {content}
     </div>
   );
-}
+};
 
 CompanyMainInfoView.defaultProps = {
   data: [{

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import '../css/SideMenuItem.css';
 
-function SideMenuItem({ logo, name, url }) {
+const SideMenuItem = ({ logo, name, url }) => {
   return (
     <li className="aside-div">
       <Link
@@ -22,7 +22,7 @@ function SideMenuItem({ logo, name, url }) {
       </Link>
     </li>
   );
-}
+};
 
 SideMenuItem.propTypes = {
   logo: PropTypes.string.isRequired,

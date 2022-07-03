@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 
 import '../css/AddFormInstrumentView.css';
 
-function AddFormInstrumentView({
+const AddFormInstrumentView = ({
   onSubmit, visible, inputs, onValueChange
-}) {
+}) => {
   const inputElements = inputs.map(({
     label, type, prop, value
   }) => {
@@ -32,7 +32,7 @@ function AddFormInstrumentView({
       </form>
     </div>
   );
-}
+};
 
 AddFormInstrumentView.propTypes = {
   visible: PropTypes.bool.isRequired,

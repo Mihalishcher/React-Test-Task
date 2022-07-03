@@ -1,7 +1,7 @@
 .header {
     min-width: 430px;
     margin-bottom: 25px;
-    box-shadow: var(--header-shadow);
+    box-shadow: var(--shadow);
     border-radius: 7px;
     background-image: var(--banner-img);
     background-size: cover;

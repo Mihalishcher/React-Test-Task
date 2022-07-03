@@ -4,7 +4,7 @@ import cn from 'classnames';
 
 import './css/CallBackOrderView.css';
 
-function CallBackOrderView(props) {
+const CallBackOrderView = (props) => {
   const {
     visibility, onChange, closeWindow, callOrdered, counter, phoneNumber, disabledBtn
   } = props;
@@ -31,7 +31,7 @@ function CallBackOrderView(props) {
       </div>
     </div>
   );
-}
+};
 
 CallBackOrderView.propTypes = {
   visibility: PropTypes.bool.isRequired,

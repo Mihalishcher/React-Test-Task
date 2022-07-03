@@ -1,18 +1,16 @@
 import SideMenu from './components/SideMenu';
 import DescriptionSide from './components/DescriptionSide';
-import Layout from '../../layout/Layout';
+import withLayout from '../../HOC/withLayout';
 
 import './css/HomeMainInfo.css';
 
-function HomeMainInfo() {
+const Home = () => {
   return (
-    <Layout>
-      <div className="main-info">
-        <SideMenu />
-        <DescriptionSide />
-      </div>
-    </Layout>
+    <div className="main-info">
+      <SideMenu />
+      <DescriptionSide />
+    </div>
   );
-}
+};
 
-export default HomeMainInfo;
+export default withLayout(Home);

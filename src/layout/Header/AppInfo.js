@@ -4,7 +4,7 @@ import ThemeContext from '../../context/ThemeContext';
 
 import './css/AppInfo.css';
 
-function AppInfo() {
+const AppInfo = () => {
   const context = useContext(ThemeContext);
   return (
     <div className="head">
@@ -27,6 +27,6 @@ function AppInfo() {
 
     </div>
   );
-}
+};
 
 export default AppInfo;

@@ -1,8 +1,9 @@
-import Layout from '../../layout/Layout';
+import withLayout from '../../HOC/withLayout';
 
-function Obladnanya() {
+const Obladnanya = () => {
   return (
-    <Layout />
+    <>
+    </>
   );
-}
-export default Obladnanya;
+};
+export default withLayout(Obladnanya);

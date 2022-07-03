@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import Layout from '../../layout/Layout';
+import withLayout from '../../HOC/withLayout';
 
 import './css/InstrumentMainInfo.css';
 import InstrumentMainInfoView from './InstrumentView';
 
-function InstrumentMainInfo() {
+const InstrumentMainInfo = () => {
   const [visible, setVisible] = useState(false);
   const [sortBy, setSortBy] = useState(null);
   const [toolbarSortSelect, setToolbarSortSelect] = useState('name');
@@ -156,28 +156,25 @@ function InstrumentMainInfo() {
   };
 
   return (
-    <Layout>
-      <InstrumentMainInfoView
-        data={data}
-        visible={visible}
-        toolbarSortSelect={toolbarSortSelect}
-        tookedItem={tookedItem}
-        millHidden={millHidden}
-        onChangeSelect={onChangeSelect}
-        showAddForm={showAddForm}
-        addInstrument={addInstrument}
-        sortData={sortData}
-        keyboardHandler={keyboardHandler}
-        dragStart={dragStart}
-        dragEnd={dragEnd}
-        dragOver={dragOver}
-        drop={drop}
-        activeLine={activeLine}
-        deleteItem={deleteItem}
-
-      />
-    </Layout>
+    <InstrumentMainInfoView
+      data={data}
+      visible={visible}
+      toolbarSortSelect={toolbarSortSelect}
+      tookedItem={tookedItem}
+      millHidden={millHidden}
+      onChangeSelect={onChangeSelect}
+      showAddForm={showAddForm}
+      addInstrument={addInstrument}
+      sortData={sortData}
+      keyboardHandler={keyboardHandler}
+      dragStart={dragStart}
+      dragEnd={dragEnd}
+      dragOver={dragOver}
+      drop={drop}
+      activeLine={activeLine}
+      deleteItem={deleteItem}
+    />
   );
-}
+};
 
-export default InstrumentMainInfo;
+export default withLayout(InstrumentMainInfo);

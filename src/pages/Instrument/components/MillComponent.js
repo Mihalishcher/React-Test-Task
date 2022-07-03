@@ -3,9 +3,9 @@ import Images from '../../../assets/Images';
 
 import '../css/MillComponent.css';
 
-function MillComponent({
+const MillComponent = ({
   name, price, property, onDelete
-}) {
+}) => {
   return (
     <>
       <img
@@ -63,7 +63,7 @@ function MillComponent({
     </>
 
   );
-}
+};
 
 MillComponent.propTypes = {
   name: PropTypes.string.isRequired,

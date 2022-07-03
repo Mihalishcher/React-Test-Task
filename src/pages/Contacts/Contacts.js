@@ -1,9 +1,9 @@
-import Layout from '../../layout/Layout';
 import CallBackOrder from '../../components/CallBackOrder/CallBackOrder';
+import withLayout from '../../HOC/withLayout';
 
-function Contacts() {
+const Contacts = () => {
   return (
-    <Layout><CallBackOrder /></Layout>
+    <CallBackOrder />
   );
-}
-export default Contacts;
+};
+export default withLayout(Contacts);

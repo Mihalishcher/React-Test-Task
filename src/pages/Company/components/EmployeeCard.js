@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 
 import '../css/EmployeeCard.css';
 
-function EmployeeCard({
+const EmployeeCard = ({
   name, image, description, urlWiki
-}) {
+}) => {
   return (
     <>
       <img className="employee-photo" src={`${image.path}.${image.extension}`} alt="Employee" />
@@ -17,7 +17,7 @@ function EmployeeCard({
 
     </>
   );
-}
+};
 
 EmployeeCard.propTypes = {
   name: PropTypes.string.isRequired,

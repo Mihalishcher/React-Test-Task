@@ -3,7 +3,7 @@ import SideMenuItem from './SideMenuItem';
 
 import '../css/SideMenu.css';
 
-function SideMenu() {
+const SideMenu = () => {
   return (
     <ul className="side-menu">
       <SideMenuItem logo={Images.golovnaLogo1} name="ОБЛАДНАННЯ" url="obladnanya" />
@@ -12,6 +12,6 @@ function SideMenu() {
       <SideMenuItem logo={Images.golovnaLogo4} name="ІНЖИНІРИНГ" url="inzhiniring" />
     </ul>
   );
-}
+};
 
 export default SideMenu;

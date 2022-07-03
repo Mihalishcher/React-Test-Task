@@ -3,7 +3,7 @@ import Images from '../../assets/Images';
 
 import './css/ErrorMessage.css';
 
-function ErrorMessage({ error }) {
+const ErrorMessage = ({ error }) => {
   // eslint-disable-next-line no-console
   console.log(error);
   return (
@@ -13,7 +13,7 @@ function ErrorMessage({ error }) {
       alt="Error"
     />
   );
-}
+};
 
 ErrorMessage.propTypes = {
   error: PropTypes.string.isRequired

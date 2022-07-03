@@ -1,8 +1,9 @@
-import Layout from '../../layout/Layout';
+import withLayout from '../../HOC/withLayout';
 
-function Inzhiniring() {
+const Inzhiniring = () => {
   return (
-    <Layout />
+    <>
+    </>
   );
-}
-export default Inzhiniring;
+};
+export default withLayout(Inzhiniring);

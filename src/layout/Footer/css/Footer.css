@@ -6,7 +6,7 @@
     color: var(--footer-text-color);
     display: flex;
     list-style-type: none;
-    box-shadow: var(--footer-shadow);
+    box-shadow: var(--shadow);
     border-radius: 7px;
 }
 

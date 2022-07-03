@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 import './css/Navbar.css';
 
-function Navbar() {
+const Navbar = () => {
   return (
     <nav>
       <li><NavLink to="/">Головна</NavLink></li>
@@ -14,6 +14,6 @@ function Navbar() {
       <li><NavLink to="/Contacts">Контакти</NavLink></li>
     </nav>
   );
-}
+};
 
 export default Navbar;

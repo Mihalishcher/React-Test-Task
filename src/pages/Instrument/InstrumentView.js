@@ -6,12 +6,12 @@ import Toolbar from './components/Toolbar';
 import AddFormInstrument from './components/AddFormInstrument';
 import MillComponent from './components/MillComponent';
 
-function InstrumentMainInfoView({
+const InstrumentMainInfoView = ({
   showAddForm, sortData, onChangeSelect, toolbarSortSelect,
   visible, addInstrument, data, millHidden, tookedItem,
   keyboardHandler, dragStart, dragEnd, dragOver, drop, activeLine,
   deleteItem
-}) {
+}) => {
   const elements = data.map((item) => {
     const {
       id, name, price, property, active
@@ -56,7 +56,7 @@ function InstrumentMainInfoView({
       {elements}
     </div>
   );
-}
+};
 
 InstrumentMainInfoView.propTypes = {
   showAddForm: PropTypes.func.isRequired,

@@ -1,4 +1,4 @@
-function Spinner() {
+const Spinner = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -58,6 +58,6 @@ function Spinner() {
       <rect fill="url(#linear-gradient2)" x="1" y="10" width="210" height="3" />
     </svg>
   );
-}
+};
 
 export default Spinner;

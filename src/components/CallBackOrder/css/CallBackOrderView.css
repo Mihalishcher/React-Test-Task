@@ -1,9 +1,10 @@
 .call-back-order {
     width: 200px;
     height: 100px;
-    background-color: rgb(206, 201, 201);
+    background-color: var(--bg-color);
+    color: var(--text-color);
     border-radius: 7px;
-    border: 2px solid;
+    border: 2px solid var(--border-color);
     position: fixed;
     bottom: 30px;
     right: 8px;
@@ -16,11 +17,13 @@
 
 .btn-group {
     display: flex;
+
 }
 
 .btn-sub {
+    color: var(--text-color);
+    background-color: var(--buttons-color);
     display: flex;
-
     margin: 10px auto;
 }
 

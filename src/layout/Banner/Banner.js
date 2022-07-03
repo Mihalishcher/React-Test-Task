@@ -2,7 +2,7 @@ import Images from '../../assets/Images';
 
 import './css/Banner.css';
 
-function Banner() {
+const Banner = () => {
   return (
     <div className="banner">
       <video src={Images.videoBanner1} type="video/mp4" muted autoPlay loop />
@@ -11,6 +11,6 @@ function Banner() {
       <h1 className="label">AS-TEC</h1>
     </div>
   );
-}
+};
 
 export default Banner;

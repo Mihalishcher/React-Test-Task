@@ -10,10 +10,7 @@
     --footer-text-hover: rgba(61, 90, 128, 0.8);
     --active-instrument: rgb(186, 184, 184);
     --buttons-color: white;
-    --header-shadow: 10px 15px 20px rgba(255, 238, 5, 0.4);
-    --footer-shadow: 10px 15px 20px rgba(61, 90, 128, 0.4);
-    --main-shadow: 10px 15px 20px rgba(255, 255, 255, 0.4);
-    --side-menu-shadow: 20px 15px 20px rgba(0, 0, 0, 0.3);
+    --shadow: 10px 15px 20px rgba(255, 238, 5, 0.4);
 }
 
 .dark {
@@ -28,8 +25,5 @@
     --footer-text-hover: rgb(255, 238, 5);
     --active-instrument: rgb(90, 15, 15);
     --buttons-color: rgb(90, 15, 15);
-    --header-shadow: 10px 15px 20px rgba(90, 15, 15, 0.4);
-    --footer-shadow: 10px 15px 20px rgba(90, 15, 15, 0.4);
-    --main-shadow: 10px 15px 20px rgba(90, 15, 15, 0.4);
-    --side-menu-shadow: 10px 15px 20px rgba(90, 15, 15, 0.6);
+    --shadow: 10px 15px 20px rgba(90, 15, 15, 0.4);
 }

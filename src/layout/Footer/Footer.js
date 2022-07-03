@@ -1,6 +1,6 @@
 import './css/Footer.css';
 
-function Footer() {
+const Footer = () => {
   return (
     <ul className="footer">
       <li>
@@ -18,6 +18,6 @@ function Footer() {
       <li>©2022 Всі права захищені!</li>
     </ul>
   );
-}
+};
 
 export default Footer;

@@ -1,6 +1,6 @@
 import '../css/DescriptionSide.css';
 
-function DescriptionSide() {
+const DescriptionSide = () => {
   return (
     <div className="description">
       <h2>ЛАСКАВО ПРОСИМО!</h2>
@@ -27,6 +27,6 @@ function DescriptionSide() {
       </ul>
     </div>
   );
-}
+};
 
 export default DescriptionSide;
