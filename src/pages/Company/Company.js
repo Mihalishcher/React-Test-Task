@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import withLayout from '../../HOC/withLayout';
 
 import useCompanyServices from '../../services/CompanyServices';
-import CompanyMainInfoView from './CompanyView';
+import CompanyInfoView from './CompanyView';
 
-const CompanyMainInfo = () => {
+const CompanyInfo = () => {
   const [data, setData] = useState([]);
   const { getAllEmployees, loading, error } = useCompanyServices();
 
@@ -15,7 +15,7 @@ const CompanyMainInfo = () => {
   }, []);
 
   return (
-    <CompanyMainInfoView
+    <CompanyInfoView
       loading={loading}
       error={error}
       data={data}
@@ -23,4 +23,4 @@ const CompanyMainInfo = () => {
   );
 };
 
-export default withLayout(CompanyMainInfo);
+export default withLayout(CompanyInfo);

@@ -7,7 +7,7 @@ import EmployeeCard from './components/EmployeeCard';
 import './css/CompanyMainInfoView.css';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 
-const CompanyMainInfoView = ({
+const CompanyInfoView = ({
   loading, data, error
 }) => {
   const elements = data.map((employee) => {
@@ -41,7 +41,7 @@ const CompanyMainInfoView = ({
   );
 };
 
-CompanyMainInfoView.defaultProps = {
+CompanyInfoView.defaultProps = {
   data: [{
     id: 0,
     name: '',
@@ -51,7 +51,7 @@ CompanyMainInfoView.defaultProps = {
   }]
 };
 
-CompanyMainInfoView.propTypes = {
+CompanyInfoView.propTypes = {
   loading: PropTypes.bool.isRequired,
   error: PropTypes.string.isRequired,
   data: PropTypes.arrayOf(PropTypes.objectOf(
@@ -64,4 +64,4 @@ CompanyMainInfoView.propTypes = {
   ))
 };
 
-export default CompanyMainInfoView;
+export default CompanyInfoView;
