@@ -2,9 +2,9 @@ import { useState } from 'react';
 import withLayout from '../../HOC/withLayout';
 
 import './css/InstrumentMainInfo.css';
-import InstrumentMainInfoView from './InstrumentView';
+import InstrumentInfoView from './InstrumentView';
 
-const InstrumentMainInfo = () => {
+const InstrumentInfo = () => {
   const [visible, setVisible] = useState(false);
   const [sortBy, setSortBy] = useState(null);
   const [toolbarSortSelect, setToolbarSortSelect] = useState('name');
@@ -156,7 +156,7 @@ const InstrumentMainInfo = () => {
   };
 
   return (
-    <InstrumentMainInfoView
+    <InstrumentInfoView
       data={data}
       visible={visible}
       toolbarSortSelect={toolbarSortSelect}
@@ -177,4 +177,4 @@ const InstrumentMainInfo = () => {
   );
 };
 
-export default withLayout(InstrumentMainInfo);
+export default withLayout(InstrumentInfo);

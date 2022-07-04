@@ -1,9 +1,8 @@
 import withLayout from '../../HOC/withLayout';
 
-const Obrobka = () => {
-  return (
-    <>
-    </>
-  );
-};
+const Obrobka = () => (
+  <>
+  </>
+);
+
 export default withLayout(Obrobka);

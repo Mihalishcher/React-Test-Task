@@ -6,7 +6,7 @@ import Toolbar from './components/Toolbar';
 import AddFormInstrument from './components/AddFormInstrument';
 import MillComponent from './components/MillComponent';
 
-const InstrumentMainInfoView = ({
+const InstrumentInfoView = ({
   showAddForm, sortData, onChangeSelect, toolbarSortSelect,
   visible, addInstrument, data, millHidden, tookedItem,
   keyboardHandler, dragStart, dragEnd, dragOver, drop, activeLine,
@@ -58,7 +58,7 @@ const InstrumentMainInfoView = ({
   );
 };
 
-InstrumentMainInfoView.propTypes = {
+InstrumentInfoView.propTypes = {
   showAddForm: PropTypes.func.isRequired,
   keyboardHandler: PropTypes.func.isRequired,
   dragStart: PropTypes.func.isRequired,
@@ -85,4 +85,4 @@ InstrumentMainInfoView.propTypes = {
     PropTypes.objectOf(PropTypes.number)])).isRequired
 };
 
-export default InstrumentMainInfoView;
+export default InstrumentInfoView;

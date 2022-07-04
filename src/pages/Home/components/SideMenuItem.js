@@ -3,26 +3,24 @@ import { Link } from 'react-router-dom';
 
 import '../css/SideMenuItem.css';
 
-const SideMenuItem = ({ logo, name, url }) => {
-  return (
-    <li className="aside-div">
-      <Link
-        to={`/${url}`}
-        className="link-logo"
-      >
-        <img
-          src={logo}
-          alt={name}
-          /* eslint-disable */
-          onLoad={() => console.log('loaded')}
-          onError={() => console.log('error loading image')}
-        /* eslint-enable */
-        />
-        {name}
-      </Link>
-    </li>
-  );
-};
+const SideMenuItem = ({ logo, name, url }) => (
+  <li className="aside-div">
+    <Link
+      to={`/${url}`}
+      className="link-logo"
+    >
+      <img
+        src={logo}
+        alt={name}
+        /* eslint-disable */
+        onLoad={() => console.log('loaded')}
+        onError={() => console.log('error loading image')}
+      /* eslint-enable */
+      />
+      {name}
+    </Link>
+  </li>
+);
 
 SideMenuItem.propTypes = {
   logo: PropTypes.string.isRequired,

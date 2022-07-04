@@ -5,65 +5,61 @@ import '../css/MillComponent.css';
 
 const MillComponent = ({
   name, price, property, onDelete
-}) => {
-  return (
-    <>
+}) => (
+  <>
+    <img
+      className="mill-photo"
+      src={Images.millLogo}
+      alt="mill-logo"
+    />
+
+    <div className="mill-property">
+      <p>{name}</p>
+      <br />
+      <p>
+        Діаметер інструменту:
+        {' '}
+        {property.diameter}
+        {' '}
+        мм
+      </p>
+      <p>
+        Довжина інструменту:
+        {' '}
+        {property.height}
+        {' '}
+        мм
+      </p>
+      <p>
+        Кількість ріжучіх кромок:
+        {' '}
+        {property.tooth}
+        {' '}
+        шт
+      </p>
+    </div>
+
+    <div className="mill-price">
+      <p>
+        Ціна:
+        {' '}
+        {price}
+        $
+      </p>
+    </div>
+
+    <div
+      onClick={onDelete}
+      role="presentation"
+    >
       <img
-        className="mill-photo"
-        src={Images.millLogo}
-        alt="mill-logo"
+        className="delete-logo"
+        src={Images.deleteLogo}
+        alt="delete-logo"
       />
-
-      <div className="mill-property">
-        <p>{name}</p>
-        <br />
-        <p>
-          Діаметер інструменту:
-          {' '}
-          {property.diameter}
-          {' '}
-          мм
-        </p>
-        <p>
-          Довжина інструменту:
-          {' '}
-          {property.height}
-          {' '}
-          мм
-        </p>
-        <p>
-          Кількість ріжучіх кромок:
-          {' '}
-          {property.tooth}
-          {' '}
-          шт
-        </p>
-      </div>
-
-      <div className="mill-price">
-        <p>
-          Ціна:
-          {' '}
-          {price}
-          $
-        </p>
-      </div>
-
-      <div
-        onClick={onDelete}
-        role="presentation"
-      >
-        <img
-          className="delete-logo"
-          src={Images.deleteLogo}
-          alt="delete-logo"
-        />
-      </div>
-
-    </>
-
-  );
-};
+    </div>
+  </>
+);
 
 MillComponent.propTypes = {
   name: PropTypes.string.isRequired,

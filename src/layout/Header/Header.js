@@ -3,13 +3,11 @@ import Navbar from './Navbar';
 
 import './css/Header.css';
 
-const Header = () => {
-  return (
-    <div className="header">
-      <AppInfo />
-      <Navbar />
-    </div>
-  );
-};
+const Header = () => (
+  <div className="header">
+    <AppInfo />
+    <Navbar />
+  </div>
+);
 
 export default Header;
