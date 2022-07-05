@@ -36,14 +36,37 @@
     font-weight: 700;
 }
 
+.instrument-zone {
+    margin: 0;
+}
+
 .dayAndNightMode {
     height: 40px;
-    margin: 10px 10px 0 0;
     padding: 0;
+    margin-top: -10px;
     background-color: rgb(255, 247, 0);
     cursor: pointer;
     border-radius: 10px;
     border: 2px solid black;
+}
+
+.language-select {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    justify-content: center;
+    background-color: transparent;
+    border: 0px;
+    cursor: pointer;
+}
+
+.ua {
+    background-image: url(../../../assets/Images/ua.png);
+}
+
+.en {
+    background-image: url(../../../assets/Images/en.png);
 }
 
 @media screen and (max-width: 768px) {

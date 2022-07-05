@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 
 import Spinner from '../../components/Spinner/Spinner';
 import EmployeeCard from './components/EmployeeCard';
@@ -28,14 +29,14 @@ const CompanyInfoView = ({
       </li>
     );
   });
-
+  const { t } = useTranslation();
   const errorMessage = error ? <ErrorMessage error={error} /> : null;
   const spinner = loading ? <Spinner /> : null;
   const content = errorMessage || spinner || elements;
 
   return (
     <div className="company-main-info">
-      <h2>Наші співробітники</h2>
+      <h2>{t('company.employees')}</h2>
       {content}
     </div>
   );

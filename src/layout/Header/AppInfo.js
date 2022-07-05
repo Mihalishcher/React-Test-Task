@@ -1,11 +1,16 @@
 import { useContext } from 'react';
-import Images from '../../assets/Images';
+import cn from 'classnames';
+import i18n from 'i18next';
+
+import LanguageContext from '../../context/LanguageContext';
 import ThemeContext from '../../context/ThemeContext';
+import Images from '../../assets/Images';
 
 import './css/AppInfo.css';
 
 const AppInfo = () => {
-  const context = useContext(ThemeContext);
+  const themeContext = useContext(ThemeContext);
+  const languageContext = useContext(LanguageContext);
   return (
     <div className="head">
       <img className="app-logo" src={Images.logoAsTec} alt="Company logo" />
@@ -14,17 +19,25 @@ const AppInfo = () => {
         <br />
         <a href="mailto:mail@gmail.com">E-Mail : mail@gmail.com</a>
       </div>
-      <button
-        className="dayAndNightMode"
-        type="button"
-        onClick={context}
-      >
-        <img
-          src={Images.dayNight}
-          alt="day and night mode"
-        />
-      </button>
-
+      <div className="instrument-zone">
+        <button
+          className="dayAndNightMode"
+          type="button"
+          onClick={themeContext}
+        >
+          <img
+            src={Images.dayNight}
+            alt="day and night mode"
+          />
+        </button>
+        <button
+          className={cn('language-select', i18n.language)}
+          type="button"
+          onClick={languageContext}
+        >
+          { }
+        </button>
+      </div>
     </div>
   );
 };

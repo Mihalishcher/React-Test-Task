@@ -1,30 +1,34 @@
 import '../css/DescriptionSide.css';
+import { useTranslation, Trans } from 'react-i18next';
 
-const DescriptionSide = () => (
-  <div className="description">
-    <h2>ЛАСКАВО ПРОСИМО!</h2>
-    <p>
-      AS-TEC - компанія в Центральній Україні, постачальник сучасних
-      рішень і технологій у сфері обробки металу.
-    </p>
-    <p>
-      Великий досвід роботи команди, глибоке знання ринку,
-      співпраця зі світовими виробниками в області металообробки,
-      комплексні пропозиції і післяпродажна підтримка -
-      все це допомагає нашим партнерам стати більш конкурентними на ринку.
-    </p>
-    <p>AS-TEC пропонує своїм клієнтам:</p>
-    <ul>
-      <li>
-        Металообробні обладнання, продаж, запуск, гарантійне і післягарантійне
-        обслуговування
-      </li>
-      <li>Інструмент і технологічне оснащення</li>
-      <li>Вимірювальний інструмент</li>
-      <li>Послуги технологічного інжинірингу</li>
-      <li>Послуги виготовлення деталей за кресленнями замовника</li>
-    </ul>
-  </div>
-);
+const DescriptionSide = () => {
+  const { t } = useTranslation();
+  return (
+    <div className="description">
+      <h2>{t('home.welcome')}</h2>
+      <Trans>home.description</Trans>
+      <br />
+
+      <p>{t('home.prupose')}</p>
+      <ul>
+        <li>
+          {t('home.metal')}
+        </li>
+        <li>
+          {t('home.instrument')}
+        </li>
+        <li>
+          {t('home.measuringTool')}
+        </li>
+        <li>
+          {t('home.ingeneering')}
+        </li>
+        <li>
+          {t('home.machiningService')}
+        </li>
+      </ul>
+    </div>
+  );
+};
 
 export default DescriptionSide;

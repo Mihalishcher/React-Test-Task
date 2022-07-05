@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 
 import '../css/AddFormInstrumentView.css';
 
@@ -10,9 +11,10 @@ const AddFormInstrumentView = ({
   const inputElements = inputs.map(({
     label, type, prop, value
   }) => {
+    const { t } = useTranslation();
     return (
       <div key={label}>
-        <label htmlFor={prop}>{label}</label>
+        <label htmlFor={prop}>{t(`instrument.${prop}`)}</label>
         <input
           type={type}
           id={prop}
@@ -23,12 +25,12 @@ const AddFormInstrumentView = ({
       </div>
     );
   });
-
+  const { t } = useTranslation();
   return (
     <div className={cn('add-form-instrument', { visible })}>
       <form onSubmit={(e) => onSubmit(e)}>
         {inputElements}
-        <button className="add-btn" type="submit">Додати елемент</button>
+        <button className="add-btn" type="submit">{t('instrument.addInstrument')}</button>
       </form>
     </div>
   );
