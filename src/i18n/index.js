@@ -12,7 +12,7 @@ i18n
       order: ['localStorage', 'navigator']
     },
     fallbackLng: 'ua',
-    supportedLngs: ['ua', 'en'],
+    // supportedLngs: ['ua', 'en'],
     debug: true,
     interpolation: {
       escapeValue: false,
