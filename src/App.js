@@ -1,5 +1,5 @@
 import {
-  useCallback, useState, Suspense, useEffect
+  useCallback, useState, Suspense
 } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import i18n from 'i18next';
@@ -19,18 +19,8 @@ import Spinner from './components/Spinner/Spinner';
 import './styles/App.css';
 
 const App = () => {
-  const changeLang = (lang) => (lang === 'ua' ? 'en' : 'ua');
-  const [language, setLanguage] = useState('');
-  const checkRusLanguage = (lang) => {
-    if (lang === 'ru') {
-      i18n.changeLanguage('ua');
-      setLanguage('ua');
-    }
-  };
-
-  useEffect(() => {
-    checkRusLanguage(i18n.language);
-  }, []);
+  const changeLang = (lang) => (lang !== 'en' ? 'en' : 'ua');
+  const [language, setLanguage] = useState(i18n.language);
 
   const toggleLanguage = useCallback(() => {
     setLanguage((prevLang) => changeLang(prevLang));

@@ -8,22 +8,22 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
+    fallbackLng: 'en',
+    supportedLngs: ['ua', 'en'],
     detection: {
       order: ['localStorage', 'navigator']
     },
-    fallbackLng: 'ua',
-    // supportedLngs: ['ua', 'en'],
-    debug: true,
+    debug: false,
     interpolation: {
       escapeValue: false,
     },
     resources: {
+      ua: {
+        translation: ua
+      },
       en: {
         translation: en
       },
-      ua: {
-        translation: ua
-      }
     }
   });
 
