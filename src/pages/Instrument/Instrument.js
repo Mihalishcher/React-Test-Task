@@ -91,6 +91,7 @@ const InstrumentInfo = () => {
 
   const dragEnd = () => {
     setMillHidden(false);
+    activeLine(null);
   };
 
   const dragOver = (e) => {
