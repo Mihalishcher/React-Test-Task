@@ -36,5 +36,10 @@ export default {
   },
   company: {
     employees: 'Наші співробітники'
+  },
+  callOrder: {
+    order: 'Замовити',
+    close: 'Закрити',
+    text: 'Ми Вам передзвонимо через: {{count}}',
   }
 };

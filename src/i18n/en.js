@@ -36,5 +36,10 @@ export default {
   },
   company: {
     employees: 'Our employees'
+  },
+  callOrder: {
+    order: 'Order',
+    close: 'Close',
+    text: 'We will call you back in: {{count}} ',
   }
 };

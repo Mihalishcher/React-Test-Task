@@ -38,7 +38,7 @@ const CallBackOrder = () => {
 
   return (
     <CallBackOrderView
-      counter={counter}
+      count={counter}
       visibility={visibility}
       phoneNumber={phoneNumber}
       disabledBtn={disabledBtn}
