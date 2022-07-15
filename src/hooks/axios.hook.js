@@ -1,12 +1,13 @@
-import { useState, useCallback } from 'react';
+import { useCallback } from 'react';
+import { useDispatch } from 'react-redux';
 import axios from 'axios';
+import { dataLoading, dataLoaded, dataError } from '../store/employessList/actions';
 
 export const useAxios = () => {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const dispatch = useDispatch();
 
   const request = useCallback(async (url, apiKey, limitChars, sort) => {
-    setLoading(true);
+    dispatch(dataLoading());
 
     const response = await axios.get(url, {
       params: {
@@ -15,16 +16,16 @@ export const useAxios = () => {
         orderBy: sort
       }
     }).catch((e) => {
-      setLoading(false);
-      setError(`Error: ${e.message} ${e.code}`);
+      dispatch(dataLoaded());
+      dispatch(dataError());
       throw e;
     });
 
-    setLoading(false);
+    dispatch(dataLoaded());
     return response;
   }, []);
 
-  return { loading, error, request };
+  return { request };
 };
 
 export default useAxios;

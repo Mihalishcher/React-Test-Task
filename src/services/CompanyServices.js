@@ -2,7 +2,7 @@ import { useAxios } from '../hooks/axios.hook';
 
 function useCompanyServices() {
   const API_KEY = '825446dc6e5485732825bdf5f618ca71';
-  const { loading, error, request } = useAxios();
+  const { request } = useAxios();
 
   const reformeEmployees = (chars) => {
     return chars.reduce((acc, {
@@ -27,12 +27,12 @@ function useCompanyServices() {
     return reformeEmployees(chars.filter(checkCharacter).slice(0, numberOfEmployees));
   };
 
-  async function getAllEmployees() {
-    const res = await request('https://gateway.marvel.com:443/v1/public/characters', API_KEY, 100, '-name');
+  async function getAllEmployees(sort) {
+    const res = await request('https://gateway.marvel.com:443/v1/public/characters', API_KEY, 100, sort);
     return transformEmployees(res.data.data.results);
   }
 
-  return { getAllEmployees, error, loading };
+  return { getAllEmployees };
 }
 
 export default useCompanyServices;

@@ -1,6 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
+import { useSelector, useDispatch } from 'react-redux';
+import { sortBy } from '../../store/employessList/actions';
 
 import Spinner from '../../components/Spinner/Spinner';
 import EmployeeCard from './components/EmployeeCard';
@@ -8,9 +9,12 @@ import EmployeeCard from './components/EmployeeCard';
 import './css/CompanyMainInfoView.css';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 
-const CompanyInfoView = ({
-  loading, data, error
-}) => {
+const CompanyInfoView = () => {
+  const dispatch = useDispatch();
+  const {
+    data, loading, error, sort
+  } = useSelector((state) => state.employeesList);
+
   const elements = data.map((employee) => {
     const {
       id, name, thumbnail, description, urls
@@ -30,39 +34,25 @@ const CompanyInfoView = ({
     );
   });
   const { t } = useTranslation();
-  const errorMessage = error ? <ErrorMessage error={error} /> : null;
+  const errorMessage = error ? <ErrorMessage /> : null;
   const spinner = loading ? <Spinner /> : null;
-  const content = errorMessage || spinner || elements;
+  const content = errorMessage || spinner;
 
   return (
     <div className="company-main-info">
+      <button
+        className="btn-reload"
+        disabled={error || loading}
+        type="button"
+        onClick={() => dispatch(sortBy((sort ? '' : '-name')))}
+      >
+        {t('company.reload')}
+      </button>
       <h2>{t('company.employees')}</h2>
       {content}
+      {elements}
     </div>
   );
-};
-
-CompanyInfoView.defaultProps = {
-  data: [{
-    id: 0,
-    name: '',
-    thumbnail: { path: '', extension: '' },
-    description: '',
-    urls: [{ url: '' }]
-  }]
-};
-
-CompanyInfoView.propTypes = {
-  loading: PropTypes.bool.isRequired,
-  error: PropTypes.string.isRequired,
-  data: PropTypes.arrayOf(PropTypes.objectOf(
-    PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-      PropTypes.objectOf(PropTypes.string),
-      PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string))
-    ])
-  ))
 };
 
 export default CompanyInfoView;

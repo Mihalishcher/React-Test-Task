@@ -35,7 +35,8 @@ export default {
     addInstrument: 'Add element'
   },
   company: {
-    employees: 'Our employees'
+    employees: 'Our employees',
+    reload: 'Reload data'
   },
   callOrder: {
     order: 'Order',

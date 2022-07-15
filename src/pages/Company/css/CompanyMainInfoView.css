@@ -19,3 +19,12 @@
     margin: 20px auto;
     padding: 10px;
 }
+
+.btn-reload {
+    color: var(--text-color);
+    background-color: var(--buttons-color);
+}
+
+.btn-reload[disabled] {
+    background-color: rgb(89, 87, 87);
+}

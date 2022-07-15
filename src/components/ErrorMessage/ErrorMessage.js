@@ -1,11 +1,8 @@
-import PropTypes from 'prop-types';
 import Images from '../../assets/Images';
 
 import './css/ErrorMessage.css';
 
-const ErrorMessage = ({ error }) => {
-  // eslint-disable-next-line no-console
-  console.log(error);
+const ErrorMessage = () => {
   return (
     <img
       className="error-message"
@@ -13,10 +10,6 @@ const ErrorMessage = ({ error }) => {
       alt="Error"
     />
   );
-};
-
-ErrorMessage.propTypes = {
-  error: PropTypes.string.isRequired
 };
 
 export default ErrorMessage;

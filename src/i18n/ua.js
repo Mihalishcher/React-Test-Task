@@ -35,7 +35,8 @@ export default {
     addInstrument: 'Додати елемент'
   },
   company: {
-    employees: 'Наші співробітники'
+    employees: 'Наші співробітники',
+    reload: 'Перезавантажити дані'
   },
   callOrder: {
     order: 'Замовити',
