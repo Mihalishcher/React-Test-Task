@@ -17,6 +17,7 @@ import Contacts from './pages/Contacts/Contacts';
 import './styles/App.css';
 
 const App = () => {
+  // prettier-ignore
   const lastUsedTheme = localStorage.getItem('app-theme') === 'dark' ? 'dark' : null;
   const changeLang = (lang) => (lang !== 'en' ? 'en' : 'ua');
   const [theme, setTheme] = useState(lastUsedTheme);
