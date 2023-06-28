@@ -37,17 +37,18 @@ const App = () => {
   }, [theme]);
 
   return (
+    // prettier-ignore
     <ThemeContext.Provider value={toggleTheme}>
       <LanguageContext.Provider value={toggleLanguage}>
         <div className={`App ${theme}`}>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/Company" element={<Company />} />
-            <Route path="/Obladnanya" element={<Obladnanya />} />
-            <Route path="/Instrument" element={<Instrument />} />
-            <Route path="/Obrobka" element={<Obrobka />} />
-            <Route path="/Inzhiniring" element={<Inzhiniring />} />
-            <Route path="/Contacts" element={<Contacts />} />
+            <Route path="/React-test-task/" element={<Home />} />
+            <Route path="/React-test-task/Company" element={<Company />} />
+            <Route path="/React-test-task/Obladnanya" element={<Obladnanya />} />
+            <Route path="/React-test-task/Instrument" element={<Instrument />} />
+            <Route path="/React-test-task/Obrobka" element={<Obrobka />} />
+            <Route path="/React-test-task/Inzhiniring" element={<Inzhiniring />} />
+            <Route path="/React-test-task/Contacts" element={<Contacts />} />
           </Routes>
         </div>
       </LanguageContext.Provider>
