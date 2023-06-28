@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/React-test-task/static/css/main.23c91702.css",
-    "main.js": "/React-test-task/static/js/main.b853a872.js",
+    "main.js": "/React-test-task/static/js/main.e71cc0aa.js",
     "static/js/787.b1d79f7a.chunk.js": "/React-test-task/static/js/787.b1d79f7a.chunk.js",
     "static/media/error.gif": "/React-test-task/static/media/error.9c3fa6add21afcd1a9f4.gif",
     "static/media/vid3.mp4": "/React-test-task/static/media/vid3.71a0fc136f75311543a2.mp4",
@@ -19,11 +19,11 @@
     "static/media/golovna-2-as-tec.jpg": "/React-test-task/static/media/golovna-2-as-tec.cf451c6aae533dd90ff8.jpg",
     "index.html": "/React-test-task/index.html",
     "main.23c91702.css.map": "/React-test-task/static/css/main.23c91702.css.map",
-    "main.b853a872.js.map": "/React-test-task/static/js/main.b853a872.js.map",
+    "main.e71cc0aa.js.map": "/React-test-task/static/js/main.e71cc0aa.js.map",
     "787.b1d79f7a.chunk.js.map": "/React-test-task/static/js/787.b1d79f7a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.23c91702.css",
-    "static/js/main.b853a872.js"
+    "static/js/main.e71cc0aa.js"
   ]
 }
